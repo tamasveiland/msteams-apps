@@ -1,0 +1,95 @@
+{
+  "@@type": "MessageCard",
+  "@@context": "https://schema.org/extensions",
+  "summary": "Cab Request for Your Approval",
+  "themeColor": "0075FF",
+  "sections": [
+    {
+      "startGroup": true,
+      "title": "**New Cab Request**",
+      "activityImage": "@{triggerBody()?['Author']?['Picture']}",
+      "activityTitle": "Requested by @{triggerBody()?['Author']?['DisplayName']}",
+      "activitySubtitle": "@{triggerBody()?['Author']?['Email']}",
+      "facts": [
+        {
+          "name": "Date submitted:",
+          "value": "@{triggerBody()?['Created']}"
+        },
+        {
+          "name": "Reason:",
+          "value": "@{triggerBody()?['Title']}"
+        },
+        {
+          "name": "Status:",
+          "value": "@{triggerBody()?['Request_x0020_Status']?['Value']}"
+        }
+      ]
+    },
+    {
+      "potentialAction": [
+        {
+          "@@type": "ActionCard",
+          "name": "Approve",
+          "inputs": [
+            {
+              "@@type": "TextInput",
+              "id": "ApproveComment",
+              "isMultiline": true,
+              "title": "Reason (optional)"
+            }
+          ],
+          "actions": [
+            {
+              "@@type": "HttpPOST",
+              "name": "Submit",
+              "target": "https://prod-27.westcentralus.logic.azure.com:443/workflows/f76fc00e7be54154b3e58284b495da03/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2YDDnTDZ-ZEpVvpq36vYfpI6dgc1SGMPrwB4JvvWjQA",
+              "headers": [
+                {
+                  "name": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "name": "authorization",
+                  "value": ""
+                }
+              ],
+              "bodyContentType": "application/json",
+              "body": "{\"approved\": true, \"comment\":\"{{ApproveComment.value}}\",\"id\": \"@{triggerBody()?['ID']}\" }"
+            }
+          ]
+        },
+        {
+          "@@type": "ActionCard",
+          "name": "Reject",
+          "inputs": [
+            {
+              "@@type": "TextInput",
+              "id": "RejectComment",
+              "isMultiline": true,
+              "title": "Reason(optional)"
+            }
+          ],
+          "actions": [
+            {
+              "@@type": "HttpPOST",
+              "name": "Submit",
+              "target": "https://prod-27.westcentralus.logic.azure.com:443/workflows/f76fc00e7be54154b3e58284b495da03/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2YDDnTDZ-ZEpVvpq36vYfpI6dgc1SGMPrwB4JvvWjQA",
+              "headers": [
+                {
+                  "name": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "name": "authorization",
+                  "value": ""
+                }
+              ],
+              "bodyContentType": "application/json",
+              "body": "{\"approved\": false, \"comment\":\"{{RejectComment.value}}\",\"id\": \"@{triggerBody()?['ID']}\" }"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

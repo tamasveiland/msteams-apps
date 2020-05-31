@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        .text {
+            height: 24px;
+            width: 34px;
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .title {
+            height: 19px;
+            width: 57px;
+            color: rgba(37,36,36,0.75);
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        body {
+            /*font-family: "Lato", sans-serif;*/
+            /*background-color: #edeff2;*/
+        }
+
+        .tab button:hover {
+            background-color: mediumpurple;
+        }
+
+        .main title {
+            height: 32px;
+            width: 64px;
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .tab {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 40px;
+            left: 0;
+            background-color: white;
+            margin-top: 10px;
+        }
+
+            .tab button {
+                display: block;
+                background-color: white;
+                padding: 10px 50px 10px 38px;
+                /*width: 100%;*/
+                height: 36px;
+                width: 280px;
+                /*background-color: #8184B9;*/
+                border: none;
+                outline: none;
+                text-align: left;
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 15px;
+            }
+
+        .tabcontent {
+            font-family: "Segoe UI";
+            height: 100%;
+            width: 74.6%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+            right: 0;
+            padding-left: 10px;
+            background-color: white;
+            margin-top: 10px;
+            font-size: 100px;
+        }
+
+        .text {
+            height: 32px;
+            width: 64px;
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 22px;
+            line-height: 32px;
+        }
+
+        .tabcontent p {
+            top: 0;
+            font-family: "Segoe UI";
+            font-size: 17px;
+            padding-left: 10px;
+            display: block;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .tabsize {
+            height: 60px;
+            width: 775px;
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        td {
+            font-family: "Segoe UI";
+        }
+
+        .vr {
+            width: 2px;
+            background-color: rgb(240,240,240);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 280px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <p style="padding-left:30px;" class="text">Help</p>
+        <button class="tablinks" onclick="openFunc(event, 'What Can You Do'); myColor();" id="defaultOpen" style="margin-top:5px;font-family: Segoe UI;">What Can You Do??</button>
+        <button class="tablinks" id="defaultOpen1" onclick="openFunc(event, 'FAQs'); myColor1();" style="font-family: Segoe UI;">FAQs</button>
+    </div>
+    <div class="vr">&nbsp;</div>
+    <div id="What Can You Do" class="tabcontent">
+        <p style="padding-left:10px;font-size : 24px;">What Can you do??</p>
+        <p style="padding-left:10px;font-size : 16px;">You can..</p>
+
+        <table border="0" cellpadding="5" cellspacing="5">
+            <tr>
+                <td style="font-size : 14px;">Submit a request</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;">Delete a request</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;"> Approve a request</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;">View your previous submitted requests</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;">Check balance status</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;">View public holidays</td>
+            </tr>
+            <tr>
+                <td style="font-size : 14px;">View personal dashboard </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="FAQs" class="tabcontent">
+        <p style="padding-left:10px;font-size : 24px;">FAQs</p>
+        <p>
+            <span style="font-size:16px;font-family: Segoe UI;color:#6264A7;">What is the leave board?<br /></span>
+            It is a onestop shop for you to see everything related to your leave queries.
+            View the requests you have submitted. Get status on the balance.
+            You can also get cool tips from our leave application. If you are a manager,
+            you will also see all the pending requests in one shot here.<br /><br />
+            <span style="font-size:16px;font-family: Segoe UI;color:#6264A7;"> What is a long holiday in the calendar view?<br /></span>
+            It means that the public holiday falls either on a Friday or Monday and that it will be a long weekend. So have some fun!
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function myColor() {
+            document.getElementById("defaultOpen").style.background = "#8184B9";
+            document.getElementById("defaultOpen1").style.background = "white";
+            document.getElementById("defaultOpen").style.color = "white";
+            document.getElementById("defaultOpen1").style.color = "black";
+        };
+        function myColor1() {
+            document.getElementById("defaultOpen1").style.background = "#8184B9";
+            document.getElementById("defaultOpen").style.background = "white";
+            //document.getElementById("defaultOpen1").onclick.style.color == "black" ? "white" : "black";
+            //document.getElementById("defaultOpen").onclick.style.color = "black";
+            document.getElementById("defaultOpen1").style.color = "white";
+            document.getElementById("defaultOpen").style.color = "black";
+        };
+
+        function openFunc(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html> 

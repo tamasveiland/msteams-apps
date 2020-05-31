@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "ceb73bc5-7950-4324-9cec-91bbc4778d92",
+  "packageName": "com.industry.common.inventory",
+  "developer": {
+    "name": "Industry Demo Team",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "InventoryBot",
+    "full": "InventoryBot for different Industries"
+  },
+  "description": {
+    "short": "This is Inventory Bot",
+    "full": "This sample allows demonstration of Inventory management based on industries. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "Bot-outline.png",
+    "color": "Bot-fill.png"
+  },
+  "accentColor": "#60A18E",
+  "bots": [
+    {
+      "botId": "ceb73bc5-7950-4324-9cec-91bbc4778d92",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [],
+  "validDomains": []
+}

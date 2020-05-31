@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Airline.PassengerInfo.Web.Model.Passenger>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Seat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PNR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrequentFlyerNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialAssistance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Seat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PNR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FrequentFlyerNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialAssistance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { PNR=item.PNR}) |
+            @Html.ActionLink("Delete", "Delete", new { PNR = item.PNR })
+        </td>
+    </tr>
+}
+
+</table>

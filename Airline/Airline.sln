@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.PassengerInfoBot", "PassengerInfo\Airline.PassengerInfoBot.csproj", "{E7A02B0D-A563-4CB8-AC6B-1D85272C5D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E84CE1F7-CF62-4588-B813-3C6D9741D04E}"
+	ProjectSection(SolutionItems) = preProject
+		.vs\config\applicationhost.config = .vs\config\applicationhost.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.FlightTeamCreationBot", "FlightTeamCreation\Airline.FlightTeamCreationBot.csproj", "{9C7E3A46-B60F-4052-9A21-DC8D1A942216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.BaggageInfoBot", "BaggageInfo\Airline.BaggageInfoBot.csproj", "{0BA0B7DF-BF44-4AC3-A355-49E106B848E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.FlightInfoBot", "FlightInfo\Airline.FlightInfoBot.csproj", "{6357A12D-5FDD-4D3B-B38F-316EDFFE0113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airline.FleetInfoBot", "FleetInfoBot\Airline.FleetInfoBot.csproj", "{54D2B6F3-7FB3-400F-BA90-D456DA511AA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XAirlines", "XAirlines\XAirlines.csproj", "{190E18AB-844D-47AB-8A97-AE47ADCEE0F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7A02B0D-A563-4CB8-AC6B-1D85272C5D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A02B0D-A563-4CB8-AC6B-1D85272C5D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A02B0D-A563-4CB8-AC6B-1D85272C5D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A02B0D-A563-4CB8-AC6B-1D85272C5D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7E3A46-B60F-4052-9A21-DC8D1A942216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7E3A46-B60F-4052-9A21-DC8D1A942216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7E3A46-B60F-4052-9A21-DC8D1A942216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7E3A46-B60F-4052-9A21-DC8D1A942216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA0B7DF-BF44-4AC3-A355-49E106B848E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA0B7DF-BF44-4AC3-A355-49E106B848E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA0B7DF-BF44-4AC3-A355-49E106B848E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA0B7DF-BF44-4AC3-A355-49E106B848E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6357A12D-5FDD-4D3B-B38F-316EDFFE0113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6357A12D-5FDD-4D3B-B38F-316EDFFE0113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6357A12D-5FDD-4D3B-B38F-316EDFFE0113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6357A12D-5FDD-4D3B-B38F-316EDFFE0113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D2B6F3-7FB3-400F-BA90-D456DA511AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D2B6F3-7FB3-400F-BA90-D456DA511AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D2B6F3-7FB3-400F-BA90-D456DA511AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D2B6F3-7FB3-400F-BA90-D456DA511AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190E18AB-844D-47AB-8A97-AE47ADCEE0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190E18AB-844D-47AB-8A97-AE47ADCEE0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190E18AB-844D-47AB-8A97-AE47ADCEE0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190E18AB-844D-47AB-8A97-AE47ADCEE0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
+		SolutionGuid = {198B8C49-4263-42CD-857C-04463EE76D69}
+	EndGlobalSection
+EndGlobal

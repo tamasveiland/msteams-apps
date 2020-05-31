@@ -1,0 +1,169 @@
+﻿{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "size": "small",
+              "url": "http://adaptivecards.io/content/airplane.png"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Flight Status",
+              "horizontalAlignment": "right",
+              "isSubtle": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "DELAYED - Bad weather",
+              "horizontalAlignment": "right",
+              "spacing": "none",
+              "size": "small",
+              "color": "attention"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "medium",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Flight No.",
+              "isSubtle": true,
+              "weight": "bolder"
+            },
+            {
+              "type": "TextBlock",
+              "text": "220",
+              "spacing": "small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Scheduled Time",
+              "isSubtle": true,
+              "horizontalAlignment": "center",
+              "weight": "bolder"
+            },
+            {
+              "type": "TextBlock",
+              "text": "10:10 AM",
+              "color": "attention",
+              "weight": "bolder",
+              "horizontalAlignment": "center",
+              "spacing": "small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Expected Time",
+              "isSubtle": true,
+              "horizontalAlignment": "right",
+              "weight": "bolder"
+            },
+            {
+              "type": "TextBlock",
+              "text": "11:45 AM",
+              "color": "attention",
+              "horizontalAlignment": "right",
+              "weight": "bolder",
+              "spacing": "small"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "medium",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Seattle",
+              "isSubtle": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "SEA",
+              "size": "extraLarge",
+              "color": "accent",
+              "spacing": "none"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": " "
+            },
+            {
+              "type": "Image",
+              "url": "http://adaptivecards.io/content/airplane.png",
+              "size": "small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Newark",
+              "isSubtle": true,
+              "horizontalAlignment": "right"
+            },
+            {
+              "type": "TextBlock",
+              "text": "EWR",
+              "horizontalAlignment": "right",
+              "size": "extraLarge",
+              "color": "accent",
+              "spacing": "none"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

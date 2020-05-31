@@ -1,0 +1,95 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "57af17b5-0742-4dc8-b16f-c72cb30134cc",
+  "packageName": "com.industrydemo.leavebot",
+  "developer": {
+    "name": "Industry Demo Team",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "Leave",
+    "full": "Leave App for Microsoft Teams"
+  },
+  "description": {
+    "short": "Leave App for Microsoft Teams",
+    "full": "This sample leave app which demos leave approval flow. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#60A18E",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://leavebotdemo.azurewebsites.net/configure",
+      "canUpdateConfiguration": true,
+      "scopes": [ "team", "groupchat" ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "com.contoso.LeaveBot.leaveboard",
+      "name": "Leave Board",
+      "contentUrl": "https://leavebotdemo.azurewebsites.net/?EmailId={upn}",
+      "websiteUrl": "https://leavebotdemo.azurewebsites.net",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "com.contoso.LeaveBot.holidays",
+      "name": "Public Holidays",
+      "contentUrl": "https://leavebotdemo.azurewebsites.net/First",
+      "websiteUrl": "https://leavebotdemo.azurewebsites.net/First",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "com.contoso.LeaveBot.help",
+      "name": "Help",
+      "contentUrl": "https://leavebotdemo.azurewebsites.net/Second",
+      "websiteUrl": "https://leavebotdemo.azurewebsites.net/Second",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "57af17b5-0742-4dc8-b16f-c72cb30134cc",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "personal",
+        "team"
+      ],
+      "commandLists": [
+        {
+          "scopes": [
+            "personal"
+          ],
+          "commands": [
+            {
+              "title": "help",
+              "description": "Displays options available with Leave Bot"
+            },
+            {
+              "title": "set manager",
+              "description": "Set the manager who would approve your leaves."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [ "token.botframework.com" ]
+}

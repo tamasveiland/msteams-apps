@@ -1,0 +1,44 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "07dd77cc-0788-4970-b490-202201c1770a",
+  "packageName": "com.airline.flight.creation",
+  "developer": {
+    "name": "Airline developer",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "Flight Team Creation",
+    "full": "This is an app for creating teams for flights"
+  },
+  "description": {
+    "short": "This is an Flight Team Creation bot",
+    "full": "This is an Flight Team Creation bot which allows you to create new team for each flight."
+  },
+  "icons": {
+    "outline": "Admin.png",
+    "color": "Admin.png"
+  },
+  "accentColor": "#60A18E",
+  "bots": [
+    {
+      "botId": "07dd77cc-0788-4970-b490-202201c1770a",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [
+    "messageTeamMembers",
+    "identity"
+  ],
+  "validDomains": [
+    "*.ngrok.io",
+    "airlineadmin.azurewebsites.net"
+  ]
+}

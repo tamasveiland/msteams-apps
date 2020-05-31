@@ -1,0 +1,154 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif';
+
+}
+
+.month {
+    text-align: center;
+    font-size: 2.5rem;
+    color: black;
+}
+
+table,
+th,
+td {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    font-size: 14px;
+    border-collapse: collapse;
+    /* border-bottom: 1px solid skyblue; */
+}
+
+tr,
+th,
+td {
+    padding: 15px;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: lightcyan;
+}
+
+th:hover {
+    background-color: whitesmoke;
+}
+
+th {
+    background-color: skyblue;
+}
+
+.right-button {
+    float: right;
+}
+
+.left-button {
+    float: left;
+}
+
+td:active {
+    border: 2px solid gray;
+}
+
+th:active {
+    border: 1px solid white;
+}
+.org {
+    background-color: #E97548;
+}
+.pink {
+    background-color: #943670;
+}
+.blue {
+    background-color: #6264A7;
+}
+.org,.pink,.blue{
+    border-radius: 4px;
+    color: white;
+    /* width: calc(100% - 40%); */
+    position: relative;
+    /* left: calc(100% - 77%); */
+    font-size: 12px;
+    padding: 2px;
+}
+
+@media screen and (min-width: 300px) and (max-width:425px) {
+    span.month-size {
+        font-size: 18px !important;
+        float: left;
+        position: relative;
+        padding-top: 10px;
+        left: 10px;
+        color: #252424;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: whitesmoke !important;
+        padding: 10px !important;
+    }
+    tr{
+        padding-bottom: 2.5rem !important;
+    }
+
+    .no-pad {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+    tr.size-pad {
+        border-bottom: 2px solid gainsboro !important;
+    }
+    table, th, td {
+        border-bottom: none !important;
+    }
+        td.date {
+            font-size: 14px;
+        }
+
+    td:active {
+        border: none !important;
+    }
+    td {
+        padding: 3px !important;
+    }
+    .org {
+        background-color: #E97548;
+    }
+    .pink {
+        background-color: #943670;
+    }
+    .org,.pink,.blue{
+        border-radius: 4px;
+        color: white;
+        width: calc(100% - 30%);
+        position: relative;
+        left: calc(100% - 80%);
+        font-size: 12px;
+        padding: 2px;
+        height: 1.5rem;
+    }
+    .blue {
+        background-color: #6264A7;
+    }
+    td:hover {
+        background-color: white!important;
+    }
+    .mob::after{
+        content: "\f068";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: relative;
+        left: 6px;
+    }
+    .mob {
+        width: 66px;
+    }
+    .day-event{
+        position: relative;
+        left: 30px;
+    }
+}

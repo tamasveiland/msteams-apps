@@ -1,0 +1,982 @@
+﻿.displayname {
+    height: 20px;
+    width: 113px;
+    color: #252424;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.jobtitle {
+    height: 16px;
+    width: 66px;
+    color: #252424;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.daysoof {
+    height: 16px;
+    width: 65px;
+    color: rgba(37,36,36,0.65);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.months {
+    height: 16px;
+    width: 41px;
+    color: rgba(37,36,36,0.65);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.html {
+    height: 732px;
+    width: 1135px;
+    background-color: #ffffff;
+    overflow-y: scroll;
+}
+
+.vb {
+    padding-top: 2px;
+    padding-left: 110px;
+}
+
+.centered img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    float: left;
+    border: 0px solid rgba(230,230,232,0.8);
+}
+
+.rect {
+    /*display: block;
+            margin: 0 auto;*/
+    height: 32px;
+    width: 120px;
+    color: white;
+    border: 1px solid rgba(37,36,36,0.15);
+    border-radius: 2px;
+    background-color: #6264A7;
+    box-shadow: 0 2px 4px -0.75px rgba(0,0,0,0.1);
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+img.thumbnail {
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border: 7px solid rgba(230, 230, 232, 0.8);
+    width: auto;
+    height: 100%;
+    width: 35%;
+    align-content: flex-start;
+    float: left;
+}
+
+.profile_info {
+    padding: 31px 0px 10px;
+}
+
+    .profile_info h2 {
+        height: 7px;
+        color: #252424;
+        font-family: Helvetica;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: -5px;
+    }
+
+    .profile_info span {
+        font-size: 12px;
+        margin-left: 1px;
+    }
+
+.left {
+    float: left;
+    margin-left: 18px;
+    color: rgba(37, 36, 36, 0.65);
+    font-family: "Segoe UI";
+}
+
+span#days,
+span#month {
+    color: black;
+    font-weight: bold;
+}
+
+input.favorite.styled {
+    background-color: #6264a7;
+    color: #fff;
+    border: 1px solid rgba(37, 36, 36, 0.15);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px -0.75px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px 7px 20px;
+    font-size: 14px;
+    margin-left: 22px;
+    margin-top: 14px;
+    cursor: pointer;
+    font-family: "Segoe UI";
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.card.card-accent-success.mb-3 {
+    border-top-color: green;
+    border-top-width: 4px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(37, 36, 36, 0.3);
+    /* margin-left: 13px; */
+    /* margin-top: 65px; */
+    min-width: 100%;
+}
+
+.card.card-accent.mb-3 {
+    border-top-color: #6264a7;
+    border-top-width: 4px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(37, 36, 36, 0.3);
+    /* margin-left: 13px; */
+}
+
+    .card.card-accent.mb-3.card1 {
+        min-width: 100%;
+        height: 250px;
+    }
+
+    .card.card-accent.mb-3.card2 {
+        min-width: 100%;
+        height: 144px;
+        border-top-color: #6264a7;
+    }
+
+.card1 {
+    min-width: 100%;
+}
+
+div#heading {
+    margin-top: 3%;
+}
+
+.approved_by {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+span.bot {
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-wrap: wrap;
+    position: absolute;
+    font-size: small;
+}
+
+span.manager1 {
+    margin-left: 6px;
+    margin-top: 9px;
+    flex-wrap: wrap;
+    font-size: small;
+}
+
+span#msg {
+    position: absolute;
+    top: 39px;
+    right: 68%;
+    color: rgba(37, 36, 36, 0.65);
+    font-family: "Segoe UI";
+    left: 71px;
+    overflow-wrap: initial;
+}
+
+div#msg1 {
+    color: rgba(37, 36, 36, 0.65);
+    font-family: "Segoe UI";
+    font-size: small;
+}
+
+.footer {
+    background-color: rgba(37, 36, 36, 0.05);
+    height: 36px;
+}
+
+.footer1 {
+    background-color: rgba(37, 36, 36, 0.05);
+    height: 36px;
+    position: relative;
+    border-bottom: 10px;
+}
+
+.footer_img {
+    margin-top: 7px;
+    margin-left: 16px;
+}
+
+.footer span {
+    font-family: "Segoe UI";
+    color: #6264a7;
+    font-size: 14px;
+    position: relative;
+    top: 10%;
+    cursor: pointer;
+}
+
+.footer1 span {
+    margin-left: 19px;
+    font-family: "Segoe UI";
+    color: #6264a7;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+.content,
+.content1 {
+    padding: 8px;
+    margin-top: 11px;
+    border: 2px solid rgba(37, 36, 36, 0.05);
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.content1 {
+    margin-top: 25px;
+}
+
+.box {
+    border-radius: 6px;
+    background-color: #f8d22a;
+    height: 5px;
+    width: 25px;
+}
+
+.table-responsive.top {
+    margin-top: 40px;
+}
+
+.table-responsive.top1 {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.head-tab {
+    color: rgba(37, 36, 36, 0.65);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    /* border-top: 2px solid rgba(37, 36, 36, 0.65); */
+}
+
+.heading {
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    margin-left: 12px;
+}
+
+.header {
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.count {
+    color: rgba(98, 100, 167, 0.75);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+    /* line-height: 32px; */
+}
+
+span.year {
+    color: rgba(37, 36, 36, 0.75);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.header1 {
+    color: rgba(37, 36, 36, 0.45);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.count1 {
+    color: rgba(37, 36, 36, 0.45);
+    font-family: "Segoe UI";
+    font-size: 15px;
+}
+
+.used-leave {
+    color: rgba(208, 2, 27, 0.75);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.allow {
+    color: rgba(37, 36, 36, 0.75);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.msg {
+    color: rgba(37, 36, 36, 0.75);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-style: italic;
+}
+
+.bor {
+    border-top: 2px solid #fff;
+}
+
+.leave_report_col1 {
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+.leave_report_col2 {
+    color: rgba(37, 36, 36, 0.75);
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+#approval {
+    color: #ffc312;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.approval1 {
+    color: #92c353;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+#approval2 {
+    color: #c4314b;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+td i {
+    color: rgba(37, 36, 36, 0.75);
+    font-family: "Teams Assets";
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.leave-type {
+    color: #6264a7;
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+i.fas.fa-circle.icon {
+    font-size: 0.4rem;
+    margin-left: 4px;
+    vertical-align: 2px;
+}
+
+i.fas.fa-chevron-right.icon {
+    font-size: 0.8rem;
+    color: #6264a7;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+i.fas.fa-pencil-alt.icon,
+i.far.fa-trash-alt.icon {
+    cursor: pointer;
+}
+
+.reason-type {
+    color: rgba(37, 36, 36, 0.75);
+    font-size: 14px;
+    font-family: "Segoe UI";
+}
+
+#load-more {
+    color: #6264a7;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.table {
+    cursor: pointer;
+}
+
+    .table td,
+    .table th {
+        vertical-align: middle;
+    }
+
+.col-sm-5.col-md-5.col-lg-3.gap {
+    border-right: 5px solid whitesmoke;
+    height: -webkit-fill-available;
+}
+
+i.fas.fa-chevron-down.icon {
+    display: none;
+}
+
+.mobile_comments {
+    display: none;
+}
+
+.mobile_view,
+.mobile_view1,
+.mobile_view2,
+.mobile_view3 {
+    display: none;
+}
+
+i.fas.fa-circle.icon1 {
+    display: none;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.flexColoumn {
+    flex-direction: column;
+}
+
+.manager {
+    flex-wrap: wrap;
+    font-size: small;
+}
+
+.button-none {
+    -webkit-appearance: none;
+    border-style: none;
+    color: rgba(37, 36, 36, 0.65);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: inherit;
+    display: none;
+}
+
+/* Media start */
+
+@media only screen and (min-width: 320px) {
+    .content,
+    .content1 {
+        font-size: small;
+        padding: 10px;
+        margin-top: 6px;
+    }
+
+    .approved_by {
+        width: 40px;
+        height: 40px;
+    }
+
+    span.manager {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .profile_info span {
+        font-size: 12px;
+        margin-left: 1px;
+        position: relative;
+        top: 13px;
+    }
+
+    span#msg {
+        font-size: small;
+    }
+
+    span.manager {
+        font-size: small;
+    }
+
+    .footer1 span,
+    .footer span {
+        font-size: small;
+    }
+
+    .card.card-accent.mb-3.card1 {
+        height: 163px;
+    }
+
+    div#heading {
+        position: relative;
+        float: left;
+    }
+
+    img.thumbnail {
+        height: 112px;
+        width: 116px;
+    }
+
+    input.favorite.styled {
+        margin-top: 102px;
+        margin-left: 16px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .profile_info {
+        position: absolute;
+        margin-left: 4%;
+    }
+
+    .left {
+        float: left;
+        margin-left: 4%;
+        top: 84px;
+        position: relative;
+        font-size: small;
+    }
+
+    h5 {
+        font-size: medium;
+    }
+
+    td.leave_report_col1,
+    td.count,
+    #load-more,
+    td.msg,
+    td.header,
+    td.header1,
+    td.used-leave,
+    td.allow,
+    td.count1,
+    span.reason-type,
+    td.leave_report_col2 {
+        font-size: 12px;
+    }
+
+        td.count.cent,
+        td.count1.cent,
+        td.used-leave.cent,
+        td.allow.cent {
+            text-align: -webkit-auto;
+        }
+
+    span.year {
+        font-size: 10px;
+    }
+
+    .table td,
+    .table th {
+        padding: 5px;
+    }
+
+    .heading {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .col-sm-5.col-md-5.col-lg-3.gap {
+        border-right: none;
+        height: 50%;
+    }
+
+    .head-tab {
+        border-top: 2px solid #fff;
+    }
+
+    th {
+        font-weight: normal;
+    }
+
+    /* Hide */
+    td.used-leave.cent,
+    #hide,
+    td.count1.cent.hide,
+    td.allow.cent,
+    td.count1.cent.hide1,
+    #hide1,
+    td.msg,
+    td.count1.cent.hide3,
+    td.leave_report_col2,
+    i.fas.fa-pencil-alt.icon,
+    i.far.fa-trash-alt.icon,
+    td#approval,
+    td.approval1,
+    td#approval2,
+    span.reason-type {
+        display: none;
+    }
+
+    i.fas.fa-chevron-down.icon {
+        font-size: 10px;
+        position: relative;
+        top: 1px;
+        display: contents;
+        cursor: pointer;
+    }
+
+    .mobile_comments {
+        display: contents;
+        color: rgba(37, 36, 36, 0.75);
+        font-family: "Segoe UI";
+        font-size: smaller;
+        font-style: italic;
+    }
+
+    td.count.cent,
+    td.count1.cent {
+        text-align: left;
+    }
+
+    .mobile_view,
+    .mobile_view1,
+    .mobile_view2,
+    .mobile_view3 {
+        display: contents;
+    }
+
+    i.fas.fa-chevron-right.icon {
+        vertical-align: top;
+        float: right;
+        padding-left: 38%;
+        color: rgba(37, 36, 36, 0.65);
+    }
+
+    .mobile_view {
+        color: rgba(37, 36, 36, 0.75);
+        font-family: "Segoe UI";
+        font-size: 12px;
+    }
+
+    .mobile_view1 {
+        color: #ffc312;
+        font-family: "Segoe UI";
+        font-size: 12px;
+    }
+
+    .mobile_view2 {
+        color: #92c353;
+        font-family: "Segoe UI";
+        font-size: 12px;
+    }
+
+    .mobile_view3 {
+        color: #c4314b;
+        font-family: "Segoe UI";
+        font-size: 12px;
+    }
+
+    td#load-more {
+        height: 60px;
+    }
+
+    .hide-icon {
+        display: none;
+    }
+
+    div#heading {
+        margin-top: 0%;
+    }
+
+    .button-none {
+        -webkit-appearance: none;
+        border-style: none;
+        color: rgba(37, 36, 36, 0.65);
+        font-family: "Segoe UI";
+        font-size: 12px;
+        font-weight: inherit;
+        display: inline;
+        cursor: pointer;
+    }
+
+    #remaining-hide {
+        display: none;
+    }
+
+    select:focus {
+        outline: none;
+    }
+
+    .fa-chevron-down:before {
+        content: "\f078";
+        margin-left: 5px;
+    }
+
+    option {
+        outline: none;
+        border-style: none;
+    }
+
+        option:hover {
+            background-color: aqua;
+        }
+
+    span#approve, span#decline {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    input.favorite.styled {
+        float: left;
+        margin-left: 19px;
+    }
+
+    .profile_info h2 {
+        height: 19px;
+        font-size: medium;
+    }
+
+    .profile_info span {
+        font-size: 12px;
+    }
+
+    h5 {
+        font-size: medium;
+    }
+
+    .profile_info {
+        float: left;
+        margin-left: 16px;
+        width: 44%;
+    }
+
+    .left {
+        float: left;
+        margin-left: 16px;
+        font-size: small;
+    }
+
+    img.thumbnail {
+        height: 100px;
+        width: 100px;
+    }
+
+    span.manager {
+        font-size: small;
+    }
+
+    .footer span,
+    .footer1 span {
+        font-size: 12px;
+    }
+
+    .content1 {
+        margin-top: 18px;
+        font-size: small;
+        /* text-align: justify; */
+    }
+
+    .card.card-accent.mb-3.card1 {
+        height: 186px;
+    }
+
+    span#msg {
+        font-size: small;
+        top: 39px;
+        left: 71px;
+    }
+
+    .content {
+        height: 55px;
+        margin-top: 7px;
+        font-size: small;
+    }
+
+    .heading {
+        font-size: medium;
+    }
+
+    .header,
+    .header1,
+    .count,
+    .count1,
+    .used-leave,
+    .allow,
+    .msg,
+    .leave_report_col1,
+    .reason-type {
+        font-size: 12px;
+    }
+
+    span.year {
+        font-size: 10px;
+    }
+
+    .table {
+        margin-bottom: 0;
+    }
+
+    td.count.cent,
+    td.allow.cent,
+    td.used-leave.cent,
+    td.count1.cent {
+        text-align: center;
+    }
+
+    .table-responsive.top {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width : 1024px) {
+    .table-responsive.top {
+        margin-top: 58px;
+    }
+
+    .profile_info span {
+        font-size: 11px;
+    }
+
+    img.thumbnail {
+        height: 86px;
+        border: 6px solid rgba(230, 230, 232, 0.8);
+        width: 40%;
+        margin-top: 27px;
+    }
+
+    .profile_info {
+        float: left;
+        margin-left: 10px;
+        width: 50%;
+    }
+
+    .left {
+        margin-left: 109px;
+        margin-top: -26px;
+        font-size: 11px;
+    }
+
+    input.favorite.styled {
+        margin-left: 100px;
+    }
+
+    /*div#heading {
+        margin-top: 80%;
+    }*/
+
+    span.manager,
+    .content1 {
+        font-size: small;
+        text-align: -webkit-auto;
+    }
+
+    .content1 {
+        margin-top: 8px;
+        width: fit-content;
+    }
+
+    .content {
+        font-size: 12px;
+    }
+
+    .approved_by {
+        width: 40px;
+        height: 40px;
+    }
+
+    span#msg {
+        left: 71px;
+    }
+
+    td.count.cent,
+    td.allow.cent,
+    td.used-leave.cent,
+    td.count1.cent {
+        text-align: justify;
+    }
+
+    div#msg1 {
+        top: 54px;
+        left: 70px;
+    }
+}
+
+@media only screen and (max-width : 1280px) {
+    div#heading {
+        margin-top: 3%;
+    }
+
+    span#ux {
+        font-size: 8px;
+    }
+
+    .left {
+        float: left;
+        position: absolute;
+        top: 18%;
+        margin-left: 45%;
+    }
+
+    input.favorite.styled {
+        margin-left: 50%;
+    }
+}
+
+@media only screen and (min-width : 1440px) {
+    td.count.cent,
+    td.allow.cent,
+    td.used-leave.cent,
+    td.count1.cent {
+        text-align: left;
+    }
+
+    .table-responsive.top {
+        margin-top: 50px;
+    }
+
+    .header,
+    .header1,
+    .count,
+    .count1,
+    .used-leave,
+    .allow,
+    .msg,
+    .leave_report_col1,
+    .reason-type {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width : 1920px) {
+    img.thumbnail {
+        /* height: 100%; */
+        width: 23%;
+    }
+
+    .profile_info h2 {
+        font-size: 24px;
+    }
+
+    .profile_info span {
+        font-size: 14px;
+        position: relative;
+        top: 10px;
+    }
+
+    .left {
+        font-size: medium;
+        position: relative;
+        margin-top: 14px;
+    }
+
+    div#heading {
+        position: relative;
+        float: left;
+        right: 58%;
+    }
+}
+
+/*Media start end  */

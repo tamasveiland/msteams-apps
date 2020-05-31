@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Simple Authentication Sample Login</title>
+</head>
+
+<body>
+
+    <script src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js" integrity="sha384-SNENyRfvDvybst1u0LawETYF6L5yMx5Ya1dIqWoG4UDTZ/5UAMB15h37ktdBbyFh" crossorigin="anonymous"></script>
+    <script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+
+    <script type="text/javascript">
+
+            microsoftTeams.initialize();
+            localStorage.removeItem("simple.error");
+            let hashParams = getHashParameters();
+            if (hashParams["error"]) {
+                localStorage.setItem("simple.error", JSON.stringify(hashParams));
+                microsoftTeams.authentication.notifyFailure(hashParams["error"]);
+            }
+            else if (hashParams["access_token"]) {
+                let expectedState = localStorage.getItem("simple.state");
+                if (expectedState !== hashParams["state"]) {
+                    localStorage.setItem("simple.error", JSON.stringify(hashParams));
+                    microsoftTeams.authentication.notifyFailure("StateDoesNotMatch");
+                }
+                else {
+                    var acces = hashParams["access_token"]
+                    getUserProfile(acces);
+                }
+            }
+            else {
+                localStorage.setItem("simple.error", JSON.stringify(hashParams));
+                microsoftTeams.authentication.notifyFailure("UnexpectedFailure");
+            }
+            function getHashParameters() {
+                let hashParams = {};
+                location.hash.substr(1).split("&").forEach(function(item) {
+                    let s = item.split("="),
+                    k = s[0],
+                    v = s[1] && decodeURIComponent(s[1]);
+                    hashParams[k] = v;
+                });
+
+                return hashParams;
+        }
+        function getUserProfile(accessToken) {
+            $.ajax({
+
+                url: "https://graph.microsoft.com/v1.0/me/",
+
+                beforeSend: function (request) {
+                    request.setRequestHeader("Authorization", "Bearer " + accessToken);
+                },
+                success: function (profile) {
+                    var name = profile.userPrincipalName;
+                    window.location = "@ProfessionalServices.LeaveBot.Helper.ApplicationSettings.BaseUrl" + "/?Emailid=" + name;
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log("textStatus: " + textStatus + ", errorThrown:" + errorThrown);
+                    $("#divError").text(errorThrown).css({ display: "" });
+                    $("#divProfile").css({ display: "none" });
+                },
+            });
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+﻿@model Tuple<ProfessionalServices.LeaveBot.Models.Employee, List<ProfessionalServices.LeaveBot.Models.LeaveExtended>, List<ProfessionalServices.LeaveBot.Models.ManagerDetails>>
+@{var myId = 0;}
+@{var showlength = 5;}
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+</head>
+<body>
+    <div class="col-sm-7 col-md-7 col-lg-9">
+        <div class="table-responsive top">
+            @if (Model.Item1.IsManager == true)
+            {
+                if (Model.Item3.Count > 0)
+                {
+            <div class='heading'>Pending Requests</div>
+            <table class="table">
+                @foreach (var item in Model.Item3)
+                        {
+                <tr class="head-tab">
+                    <td class="header">@item.ResourceName</td>
+                    <td class='leave_report_col1'>
+                        @item.mgrstartDay, @item.mgrStartDateval-@item.mgrEndDay, @item.mgrEndDateVal, @item.EndDate.Date.Year <br />
+                        <span style="color:#6462A7"> @item.LeaveType  </span><span class="dot1"></span>
+                        <span style="font-size:small;line-height:12px;"> @item.EmployeeComment</span>
+                    </td>
+                    <td>
+                        @item.mgrDaysdiff Days OOF
+                    </td>
+                    <td>
+                        <a href="https://teams.microsoft.com/l/chat/0/0?users=28:@System.Web.Configuration.WebConfigurationManager.AppSettings["MicrosoftAppId"]" target="_blank">
+                            <span style="color:green" class="fas fa-check"></span>
+                            <span id="approve"> Approve</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://teams.microsoft.com/l/chat/0/0?users=28:@System.Web.Configuration.WebConfigurationManager.AppSettings["MicrosoftAppId"]" target="_blank">
+                            <span style="color:red" class="fas fa-times"></span>
+                            <span id="decline"> Decline</span>
+                        </a>
+                    </td>
+                </tr>
+                        }
+            </table>
+                }
+                else
+                {
+            <p style="height: 24px;	color: #252424;	font-family:'Segoe UI';	font-size: 16px;line-height: 24px;font-weight:bold">No Pending requests </p>
+                }
+            }
+            <div class='heading'>Balance Status</div>
+            <table class="table">
+                <tr class="head-tab">
+                    <th>Type</th>
+                    <th>
+                        <span id='remaining-hide'>Remaining</span>
+                        <select class='button-none'>
+                            <option class='select' id='remaining' value='Remaining'>Remaining</option>
+                            <option class='select' id='used' value='Used'>Used</option>
+                            <option class='select' id='allow' value='allow'>Allowance</option>
+                        </select><i class="fas fa-chevron-down icon"></i>
+                    </th>
+                    <th id='hide'>Used</th>
+                    <th id='hide1'>Allowance</th>
+                    <th></th>
+                </tr>
+                <tr class="bor">
+                    <td class="header">Paid Leaves</td>
+                    @if (Model.Item2 != null)
+                    {
+                        int totalleaves = 0;
+                        string Lastused = null;
+
+                        foreach (var item in Model.Item2)
+                        {
+                            if (item.LeaveType == ProfessionalServices.LeaveBot.Models.LeaveType.PaidLeave && item.Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+                                totalleaves = item.DaysDiff;
+
+                            }
+                            if (item.EndDate != null)
+                            {
+                                Lastused = item.EndDate.Date.ToString("MMM");
+                            }
+
+                        }
+                    <td class='count cent' id='remaining-paid-leaves'>
+                        @(Model.Item1.LeaveBalance.PaidLeave - totalleaves)
+                        <br>
+                        @if (Lastused != null)
+                             {
+                        <span class='mobile_comments'>Last used in @Lastused</span>
+                             }
+                             else
+                             {
+                        <span class="mobile_comments">-</span>
+                             }
+                    </td>
+                    <td class='used-leave cent' id='used-leave-paid'>@totalleaves</td>
+                    <td class='allow cent' id='allow-leave-paid'>@Model.Item1.LeaveBalance.PaidLeave</td>
+                        if (Lastused != null)
+                        {
+                    <td class="msg">Last used in @Lastused</td>
+                        }
+                        else
+                        {
+                    <td>-</td>
+                        }
+                    }
+                </tr>
+                <tr>
+                    <td class="header">Sick Leaves</td>
+                    @if (Model.Item2 != null)
+                    {
+                        int totalleaves = 0;
+                        string Lastused = null;
+                        foreach (var item in Model.Item2)
+                        {
+                            if (item.LeaveType == ProfessionalServices.LeaveBot.Models.LeaveType.SickLeave && item.Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+                                totalleaves = item.DaysDiff;
+                            }
+                            if (item.EndDate != null)
+                            {
+                                Lastused = item.EndDate.Date.ToString("MMM");
+                            }
+                        }
+                    <td class='count cent' id='remaining-paid-sick-leaves'>
+                        @(Model.Item1.LeaveBalance.SickLeave - totalleaves)
+                        <br>
+                        @if (Lastused != null)
+                        {
+                        <span class='mobile_comments'>Last used in @Lastused</span>
+                        }
+                        else
+                        {
+                        <span class="mobile_comments">-</span>
+                        }
+                    </td>
+                    <td class='used-leave cent' id='used-leave-sick'>@totalleaves</td>
+                    <td class='allow cent' id='allow-leave-sick'>@Model.Item1.LeaveBalance.SickLeave</td>
+                        if (Lastused != null)
+                        {
+                    <td class="msg">Last used in @Lastused</td>
+                        }
+                        else
+                        {
+                    <td>-</td>
+                        }
+                    }
+                </tr>
+                <tr>
+                    <td class="header">
+                        Carried over from last year <br>
+                        <span class='year'>Recommended to utilise for vacations</span>
+                    </td>
+                    @if (Model.Item2 != null)
+                    {
+                        int totalleaves = 0;
+                        string Lastused = null;
+                        foreach (var item in Model.Item2)
+                        {
+                            if (item.LeaveType == ProfessionalServices.LeaveBot.Models.LeaveType.CarriedLeave && item.Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+                                totalleaves = item.DaysDiff;
+                            }
+                            if (item.EndDate != null && item.LeaveType == ProfessionalServices.LeaveBot.Models.LeaveType.CarriedLeave && item.Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+
+                                Lastused = item.EndDate.Date.ToString("MMM");
+                            }
+
+                        }
+                    <td class='count cent' id='remaining-paid-carried-leaves'>
+                        @(Model.Item1.LeaveBalance.CarriedLeave - totalleaves)
+                    </td>
+                    <td class='used-leave cent' id='used-leave-carried'>@totalleaves</td>
+                    <td class='allow cent' id='allow-leave-carried'>@Model.Item1.LeaveBalance.CarriedLeave</td>
+                        if (Lastused != null)
+                        {
+                    <td class="msg">Last Used in @Lastused</td>
+                        }
+                        else
+                        {
+                    <td class="msg">-</td>
+                        }
+                    }
+                </tr>
+                <tr>
+                    <td class='header1'>Maternity Leaves</td>
+                    <td class='count1 cent' id='Maternity'>@Model.Item1.LeaveBalance.MaternityLeave</td>
+                    <td class='count1 cent hide' id='Maternity-used'>0</td>
+                    <td class='count1 cent hide1'>0</td>
+                    <td class='count1 cent hide3'>-</td>
+                </tr>
+                <tr>
+                    <td class='header1 cent'>Paternity Leaves</td>
+                    <td class='count1 cent' id='Paternity'>@Model.Item1.LeaveBalance.PaternityLeave</td>
+                    <td class='count1 cent hide' id='Paternity-used'>0</td>
+                    <td class='count1 cent hide1'>0</td>
+                    <td class='count1 cent hide3'>-</td>
+                </tr>
+                <tr>
+                    <td class='header1'>Caregiver Leaves</td>
+                    <td class='count1 cent' id='Caregiver'>@Model.Item1.LeaveBalance.Caregiver</td>
+                    <td class='count1 cent hide' id='Caregiver-used'>0</td>
+                    <td class='count1 cent hide1'>0</td>
+                    <td class='count1 cent hide3'>-</td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-responsive top1">
+            <div class='heading'>Leave report</div>
+            <table class="table">
+                @if (Model.Item2 != null)
+                {
+                    for (int index = 0; index < ((showlength > Model.Item2.Count) ? Model.Item2.Count : showlength); index++, myId++)
+                    {
+                <tr class="head-tab">
+                    <td class='leave_report_col1'>
+                        @Model.Item2[index].startDay, @Model.Item2[index].StartDateval-@Model.Item2[index].EndDay, @Model.Item2[index].EndDateVal, @Model.Item2[index].EndDate.Date.Year<br>
+                        <span class='leave-type'>@Model.Item2[index].LeaveType</span><i class="fas fa-circle icon"></i> <span class=mobile_view> @Model.Item2[index].DaysDiff days OFF</span><i class="fas fa-circle icon1"></i><span class=mobile_view1> @Model.Item2[index].Status</span>
+                        <span class='reason-type'>
+                            @Model.Item2[index].EmployeeComment
+                        </span>
+                        @*</span><i class="fas fa-chevron-right icon"></i>*@
+                    </td>
+                    <td class='leave_report_col2'>@Model.Item2[index].DaysDiff days OFF</td>
+                    @if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+                    <td class='approval1'>Approved</td>
+                    <td></td>
+                    <td></td>
+                            }
+                            else if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Pending)
+                            {
+                    <td id='approval'>Pending</td>
+                    <td class='hide-icon'><img src='~/Resources/pencil.PNG'> </td>
+                    <td class='hide-icon'><img src='~/Resources/delete.PNG'> </td>
+                            }
+                            else if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Rejected)
+                            {
+                    <td id='approval2'>Declined</td>
+                    <td></td>
+                    <td></td>
+                            }
+                </tr>
+                    }
+                    for (int index = showlength; index < Model.Item2.Count; index++, myId++)
+                    {
+                <tr id="@myId">
+                    <td class='leave_report_col1'>
+                        @Model.Item2[index].startDay, @Model.Item2[index].StartDateval-@Model.Item2[index].EndDay, @Model.Item2[index].EndDateVal, @Model.Item2[index].EndDate.Date.Year <br>
+                        <span class='leave-type'>@Model.Item2[index].LeaveType</span><i class="fas fa-circle icon"></i> <span class=mobile_view> @Model.Item2[index].DaysDiff days OFF</span><i class="fas fa-circle icon1"></i><span class=mobile_view2> @Model.Item2[index].Status</span>
+                        <span class='reason-type'>@Model.Item2[index].EmployeeComment</span>
+                    </td>
+                    <td class='leave_report_col2'>@Model.Item2[index].DaysDiff day OFF</td>
+                    @if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Approved)
+                            {
+                    <td class='approval1'>Approved</td>
+                    <td></td>
+                    <td></td>
+                            }
+                            else if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Pending)
+                            {
+                    <td id='approval'>Pending</td>
+                    <td class='hide-icon'><img src='~/Resources/pencil.PNG'> </td>
+                    <td class='hide-icon'><img src='~/Resources/delete.PNG'> </td>
+                            }
+                            else if (Model.Item2[index].Status == ProfessionalServices.LeaveBot.Models.LeaveStatus.Rejected)
+                            {
+                    <td id='approval2'>Declined</td>
+                    <td></td>
+                    <td></td>
+                            }
+                </tr>
+                    }
+                }
+            </table>
+            @if (showlength < Model.Item2.Count)
+            {
+            <a href="#" id="load-more" onclick="myFunction(@Model.Item2.Count)">Load More</a>
+            }
+        </div>
+    </div>
+</body>
+</html>

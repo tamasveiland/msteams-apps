@@ -1,0 +1,76 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "d7efafde-bb2e-495c-b8af-554724d59261",
+  "packageName": "com.industrydemo.airlines.xairlines",
+  "developer": {
+    "name": "Industry Demo Team",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "Airlines",
+    "full": "Airlines Demo App for Microsoft Teams"
+  },
+  "description": {
+    "short": "Airlines app for Microsoft Teams",
+    "full": "This sample Airlines app demos roster information. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#60A18E",
+  "staticTabs": [
+    {
+      "entityId": "com.contoso.Airlines.portal",
+      "name": "Portal",
+      "contentUrl": "https://airlinecabincrew.azurewebsites.net/portal?userEmailId={upn}",
+      "websiteUrl": "https://airlinecabincrew.azurewebsites.net/portal",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "d7efafde-bb2e-495c-b8af-554724d59261",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "personal",
+        "team"
+      ],
+      "commandLists": [
+        {
+          "scopes": [
+            "personal",
+            "team"
+          ],
+          "commands": [
+            {
+              "title": "help",
+              "description": "Displays options available with Airlines Bot"
+            },
+            {
+              "title": "my next week roster",
+              "description": "Displays the next week roster"
+            },
+            {
+              "title": "my next month roster",
+              "description": "Displays the next month roster"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": ["airlinecabincrew.azurewebsites.net", "*.botframework.com" ]
+}

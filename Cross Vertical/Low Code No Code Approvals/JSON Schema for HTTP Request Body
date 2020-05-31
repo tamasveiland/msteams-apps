@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "approved": {
+            "type": "boolean"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "@@type": "MessageCard",
+  "@@context": "https://schema.org/extensions",
+  "summary": "Cab Request for Your Approval",
+  "themeColor": "0075FF",
+  "sections": [
+    {
+      "startGroup": true,
+      "title": "**Cab Request Updated**",
+      "activityImage": "@{body('Update_item_2')?['Author']?['Picture']}",
+      "activityTitle": "Requested by @{body('Update_item_2')?['Author']?['DisplayName']}",
+      "activitySubtitle": "@{body('Update_item_2')?['Author']?['Email']}",
+      "facts": [
+        {
+          "name": "Date submitted:",
+          "value": "@{body('Update_item_2')?['Created']}"
+        },
+        {
+          "name": "Reason:",
+          "value": "@{body('Update_item_2')?['Title']}"
+        },
+        {
+          "name": "Status:",
+          "value": "@{body('Update_item_2')?['Request_x0020_Status']?['Value']}"
+        },
+        {
+          "name": "Actioned By:",
+          "value": "@{body('Update_item_2')['Approved_x0020_By']}"
+        }
+      ]
+    }
+  ]
+}

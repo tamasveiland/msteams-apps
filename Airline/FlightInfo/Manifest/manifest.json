@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "e20c67ec-57fa-4383-96d0-06b1cd6b2534",
+  "packageName": "com.Airline.FlightInfoBot",
+  "developer": {
+    "name": "Contoso",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "FlightInfoBot",
+    "full": "FlightInfoBot for Microsoft Teams"
+  },
+  "description": {
+    "short": "This is a FlightInfo bot",
+    "full": "This sample allows demonstration of Flight booking. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "Outline-Flight-Bot-08.png",
+    "color": "Airline-Flight-Bot-03.png"
+  },
+  "accentColor": "#60A18E",
+  "bots": [
+    {
+      "botId": "e20c67ec-57fa-4383-96d0-06b1cd6b2534",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [],
+  "validDomains": []
+}

@@ -1,0 +1,123 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "horizontalAlignment": "Left",
+          "items": [
+            {
+              "type": "TextBlock",
+              "weight": "Lighter",
+              "text": "{StartDay}"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "horizontalAlignment": "Left",
+          "items": [
+            {
+              "type": "TextBlock",
+              "weight": "Lighter",
+              "text": "{EndDay}"
+            }
+          ],
+          "width": "auto"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "Small",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{StartDate}"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{EndDate}"
+            }
+          ],
+          "width": "auto"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "{DayCount} days out of office"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "horizontalAlignment": "Left",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{LeaveType}:",
+              "color": "Accent"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "horizontalAlignment": "Left",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{LeaveReason}",
+              "wrap": true
+            }
+          ],
+          "width": "auto"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "horizontalAlignment": "Left",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Approval Status:"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "spacing": "Small",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Left",
+              "color": "Warning",
+              "text": "{Status}"
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    }
+  ],
+  "version": "1.0"
+}

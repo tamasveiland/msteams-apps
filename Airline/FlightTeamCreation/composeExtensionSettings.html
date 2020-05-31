@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Info</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js'></script>
+    <script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+</head>
+<body>
+    <script>
+
+        $(document).ready(function () {
+            microsoftTeams.initialize();
+            if (window.location.hash) {
+                console.log(window.location.hash);
+                let hashParams = getHashParameters();
+                debugger;
+                console.log('hash params', hashParams);
+                if (hashParams["error"]) {
+                    // Authentication/authorization failed
+                    localStorage.setItem("simple.error", JSON.stringify(hashParams));
+                    microsoftTeams.authentication.notifyFailure(hashParams["error"]);
+                } else if (hashParams["access_token"]) {
+
+                    microsoftTeams.getContext(function (context) {
+                        // Go to the Azure AD authorization endpoint
+                        
+                        $.ajax({
+                            url: '/setuserinfo',
+                            type: 'post',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                idToken: hashParams["id_token"],
+                                accessToken: hashParams["access_token"],
+                                tokenType: hashParams["token_type"],
+                                expiresIn: hashParams["expires_in"],
+                                userId: context.upn
+                            }),
+                            success: function (data, textStatus, jQxhr) {
+                                console.log('succes function');
+                            },
+                            error: function (jqXhr, textStatus, errorThrown) {
+                                console.log('error', errorThrown);
+                            }
+                        });
+                    });
+                    
+
+                    // Success -- return token information to the parent page
+                    microsoftTeams.authentication.notifySuccess(hashParams["access_token"]);
+
+
+
+                } else {
+                    // Unexpected condition: hash does not contain error or access_token parameter
+                    localStorage.setItem("simple.error", JSON.stringify(hashParams));
+                    microsoftTeams.authentication.notifyFailure("UnexpectedFailure");
+                }
+            }
+            else {
+                microsoftTeams.getContext(function (context) {
+                    // Go to the Azure AD authorization endpoint
+                    let queryParams = {
+                        client_id: "07dd77cc-0788-4970-b490-202201c1770a",
+                        response_type: "id_token token",
+                        response_mode: "fragment",
+                        scope: "https://graph.microsoft.com/User.Read https://graph.microsoft.com/Directory.ReadWrite.All https://graph.microsoft.com/Directory.AccessAsUser.All https://graph.microsoft.com/Group.ReadWrite.All openid",
+                        redirect_uri: window.location.origin + "/Auth/Simple",
+                        nonce: uuidv4(),
+                        state: uuidv4()
+                    };
+
+                    let authorizeEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?"
+                        + toQueryString(queryParams);
+                    console.log("authorize end point", authorizeEndpoint);
+                    window.location.assign(authorizeEndpoint);
+                });
+            }
+        });
+
+        // Parse hash parameters into key-value pairs
+        function getHashParameters() {
+            let hashParams = {};
+            location.hash.substr(1).split("&").forEach(function (item) {
+                let s = item.split("="),
+                    k = s[0],
+                    v = s[1] && decodeURIComponent(s[1]);
+                hashParams[k] = v;
+            });
+            return hashParams;
+        }
+
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Build query string from map of query parameter
+        function toQueryString(queryParams) {
+            let encodedQueryParams = [];
+            for (let key in queryParams) {
+                encodedQueryParams.push(key + "=" + encodeURIComponent(queryParams[key]));
+            }
+            return encodedQueryParams.join("&");
+        }
+    </script>
+</body>
+</html>

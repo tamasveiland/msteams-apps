@@ -1,0 +1,49 @@
+﻿<html>
+<body>
+
+    <form>
+        <input type="radio" name="leavebot" value="leaveboard" onclick="onClick();"> Leave Board<br>
+        <input type="radio" name="leavebot" value="holidays" onclick="onClick();"> Public Holidays<br />
+        <input type="radio" name="leavebot" value="help" onclick="onClick();"> Help<br />
+    </form>
+
+    <script src="MicrosoftTeams.min.js"></script>
+    <script type="text/javascript">
+        microsoftTeams.initialize();
+        microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+            var radios = document.getElementsByName("leavebot");
+            if (radios[0].checked) {
+                microsoftTeams.settings.setSettings({
+                    entityId: "com.contoso.LeaveBot.leaveboard",
+                    contentUrl:"https://leavebotdemo.azurewebsites.net/?EmailId={upn}",
+                    suggestedDisplayName: "Leave Board",
+                    websiteUrl: "https://leavebotdemo.azurewebsites.net",
+                    removeUrl: "https://leavebotdemo.azurewebsites.net/remove",
+                });
+            } else if (radios[1].checked) {
+                microsoftTeams.settings.setSettings({
+                    entityId: "com.contoso.LeaveBot.holidays",
+                    contentUrl: "https://leavebotdemo.azurewebsites.net/First",
+                    suggestedDisplayName: "Public Holidays",
+                    websiteUrl: "https://leavebotdemo.azurewebsites.net/First",
+                    removeUrl:"https://leavebotdemo.azurewebsites.net/remove",
+                });
+            }
+            else {
+                microsoftTeams.settings.setSettings({
+                    entityId: "com.contoso.LeaveBot.help",
+                    contentUrl: "https://leavebotdemo.azurewebsites.net/Second",
+                    suggestedDisplayName: "Help",
+                    websiteUrl: "https://leavebotdemo.azurewebsites.net/Second",
+                    removeUrl:"https://leavebotdemo.azurewebsites.net/remove",
+
+                });
+            }
+            saveEvent.notifySuccess();
+        });
+        function onClick() {
+            microsoftTeams.settings.setValidityState(true);
+        }
+    </script>
+</body>
+</html>

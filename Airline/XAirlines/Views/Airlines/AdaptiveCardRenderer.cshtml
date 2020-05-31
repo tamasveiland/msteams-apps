@@ -1,0 +1,41 @@
+﻿@model Airlines.XAirlines.Models.Portal
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/b"></script>
+        <link rel="stylesheet" href="~/Content/details.css" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".ac-action-showCard").click(function () {
+                    var elements = document.getElementsByClassName("ac-action-showCard");
+                    for (var i = 0; i < elements.length; i++) {
+                        var idForDiv = elements[i].getAttribute('data-ac-showcardid');
+                        var myele = document.getElementById(idForDiv)
+                        myele.style.display = "none"
+                    }
+                    var ele = $(this).attr('data-ac-showcardid')
+                    var myele = document.getElementById(ele)
+                    myele.style.display="block"
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <main>
+                <div style="overflow:scroll">
+                    <div class="split-left">
+                        <span class="text"></span>
+                        @Html.Raw(Model.html)
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </body>
+    </html>

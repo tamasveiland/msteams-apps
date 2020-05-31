@@ -1,0 +1,147 @@
+﻿@model Tuple<ProfessionalServices.LeaveBot.Models.Employee, List<ProfessionalServices.LeaveBot.Models.LeaveExtended>, List<ProfessionalServices.LeaveBot.Models.ManagerDetails>>
+@using ProfessionalServices.LeaveBot.Helpers
+@{var showlength = 5;}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <title>Leave Bot</title>
+</head>
+<body>
+    @if (Model != null)
+    {
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Partial("_LeaveRight", Model)
+            @Html.Partial("_LeaveLeft", Model)
+        </div>
+    </div>
+    }
+    else
+    {
+    <p style="font-weight:700;font-size:14px;">User details not found. Please go to bot</p>
+    }
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="~/Content/main.js"></script>
+    <script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+    <script src="@("https://unpkg.com/@microsoft/teams-js@1.3.4/dist/MicrosoftTeams.min.js")"></script>
+    <script src='~/Scripts/LeaveAdaptiveCard.js'></script>
+    <script type="text/javascript">
+                                   var url = window.location.search;
+                                    url = url.replace("?", '');
+                                    if (!url) {
+                                        microsoftTeams.initialize();
+                                        let state = _guid();
+                                        localStorage.setItem("simple.state", state);
+                                        localStorage.removeItem("simple.error");
+                                        let queryParams = {
+                                            client_id: "@ProfessionalServices.LeaveBot.Helper.ApplicationSettings.AppId",
+                                            response_type: "id_token token",
+                                            response_mode: "fragment",
+                                            scope: "https://graph.microsoft.com/User.Read   openid",
+                                            redirect_uri: window.location.origin + "/simpleend",
+                                            nonce: _guid(),
+                                            state: state,
+                                        };
+                                        let authorizeEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?" + toQueryString(queryParams);
+                                        window.location.assign(authorizeEndpoint);
+                                        function toQueryString(queryParams) {
+                                            let encodedQueryParams = [];
+                                            for (let key in queryParams) {
+                                                encodedQueryParams.push(key + "=" + encodeURIComponent(queryParams[key]));
+                                            }
+                                            return encodedQueryParams.join("&");
+                                        }
+                                        function _decimalToHex(number) {
+                                            var hex = number.toString(16);
+                                            while (hex.length < 2) {
+                                                hex = '0' + hex;
+                                            }
+                                            return hex;
+                                        }
+                                        function _guid() {
+                                            var cryptoObj = window.crypto || window.msCrypto;
+                                            if (cryptoObj && cryptoObj.getRandomValues) {
+                                                var buffer = new Uint8Array(16);
+                                                cryptoObj.getRandomValues(buffer);
+                                                buffer[6] |= 0x40;
+                                                buffer[6] &= 0x4f;
+                                                buffer[8] |= 0x80;
+                                                buffer[8] &= 0xbf;
+                                                return _decimalToHex(buffer[0]) + _decimalToHex(buffer[1]) + _decimalToHex(buffer[2]) + _decimalToHex(buffer[3]) + '-' + _decimalToHex(buffer[4]) + _decimalToHex(buffer[5]) + '-' + _decimalToHex(buffer[6]) + _decimalToHex(buffer[7]) + '-' +
+
+                                                    _decimalToHex(buffer[8]) + _decimalToHex(buffer[9]) + '-' + _decimalToHex(buffer[10]) + _decimalToHex(buffer[11]) + _decimalToHex(buffer[12]) + _decimalToHex(buffer[13]) + _decimalToHex(buffer[14]) + _decimalToHex(buffer[15]);
+
+                                            }
+                                            else {
+                                                var guidHolder = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
+                                                var hex = '0123456789abcdef';
+                                                var r = 0;
+                                                var guidResponse = "";
+                                                for (var i = 0; i < 36; i++) {
+                                                    if (guidHolder[i] !== '-' && guidHolder[i] !== '4') {
+                                                        r = Math.random() * 16 | 0;
+                                                    }
+                                                    if (guidHolder[i] === 'x') {
+                                                        guidResponse += hex[r];
+                                                    } else if (guidHolder[i] === 'y') {
+                                                        r &= 0x3;
+                                                        r |= 0x8;
+                                                        guidResponse += hex[r];
+                                                    } else {
+                                                        guidResponse += guidHolder[i];
+                                                    }
+                                                }
+                                                return guidResponse;
+                                            }
+                                        };
+                                    }
+                                    microsoftTeams.initialize();
+                                    submitHandler = (err, result) => {
+                                        // alert("Result = " + JSON.stringify(result) + "\nError = " + JSON.stringify(err));
+                                        // Not doing anything here.
+                                    };
+                                    function submit(type) {
+                                        let taskInfo = {
+                                          title: null,
+                                          height: null,
+                                          width: null,
+                                          url: null,
+                                          card: null,
+                                          fallbackUrl: null,
+                                         completionBotId: null,
+                                    };
+                                taskInfo.title = "Apply For Leave";
+                                taskInfo.height = 500;
+                                taskInfo.width = 600;
+                                taskInfo.card = taskInfo.card = {
+                                contentType: "application/vnd.microsoft.card.adaptive",
+                                content: getAdaptiveCard()};
+                                taskInfo.completionBotId = "@ProfessionalServices.LeaveBot.Helper.ApplicationSettings.AppId";
+                                microsoftTeams.tasks.startTask(taskInfo, submitHandler);
+                            }
+                            function myFunction(count) {
+                                for (var id = @showlength; id < count; id++) {
+                                    var x = document.getElementById(id);
+                                    if (x.style.display === "none") {
+                                        x.style.display = "table-row";
+                                    } else {
+                                        x.style.display = "none";
+                                    }
+                                }
+                                document.getElementById('load').style.display = "none";
+                            }
+    </script>
+</body>
+</html>

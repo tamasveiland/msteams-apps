@@ -1,0 +1,311 @@
+﻿.date {
+    height: 16px;
+    width: 25px;
+    color: rgba(37,36,36,0.65);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px;
+}
+
+.day {
+    height: 16px;
+    width: 21px;
+    color: rgba(37,36,36,0.65);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 5px;
+}
+
+.event {
+    height: 16px;
+    width: 29px;
+    color: rgba(37,36,36,0.65);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    line-height: 16px;
+    /*padding: 15px;*/
+}
+
+.row-date {
+    height: 25px;
+    width: 30%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.row-day {
+    height: 15px;
+    width: 30%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    padding: 8px;
+}
+
+.row-info {
+    height: 15px;
+    width: 30%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.row-event {
+    height: 15px;
+    width: 18%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    padding: 6px;
+}
+
+.row-count {
+    height: 15px;
+    width: 9%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.responserow {
+    height: 15px;
+    width: 6%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.responserow2 {
+    height: 15px;
+    width: 10%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.row-recept {
+    height: 15px;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.row-last {
+    height: 15px;
+    width: 8%;
+    color: #252424;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    /*padding: 6px;*/
+    padding-left: 0px;
+}
+
+.container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.containers {
+    background-color: #f3f2f1;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.panel-group {
+    width: 100%;
+    opacity: 1.5;
+    border: 10px solid transparent;
+    display: block;
+    margin: 10px auto;
+    border: 1px solid transparent;
+}
+
+.rect {
+    float: right;
+    height: 32px;
+    width: 100px;
+    color: white;
+    border: 1px solid rgba(37,36,36,0.15);
+    border-radius: 2px;
+    background-color: #6264A7;
+    box-shadow: 0 2px 4px -0.75px rgba(0,0,0,0.1);
+    font-family: "Segoe UI";
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.rectangle {
+    height: 32px;
+    width: 100px;
+    color: white;
+    border: 1px solid rgba(37,36,36,0.15);
+    border-radius: 2px;
+    background-color: #6264A7;
+    box-shadow: 0 2px 4px -0.75px rgba(0,0,0,0.1);
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+.body {
+    background-color: #f3f2f1;
+    width: 100%
+}
+
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: 500;
+}
+
+td {
+    padding: 4px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+
+.rowstyle {
+    background-color: white;
+    border-bottom: 2px solid #f3f2f1;
+    width: 100%;
+    padding: 6px;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+
+.btn-primary {
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    border: 0px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.row-line {
+    width: 10%;
+}
+
+.imgstyle {
+    font-size: 14px;
+    height: 15px;
+    opacity: 0.8;
+    vertical-align: bottom;
+}
+
+.imgstyle1 {
+    font-size: 14px;
+    height: 15px;
+    opacity: 0.8;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.imgstyle3 {
+    font-size: 14px;
+    height: 15px;
+    opacity: 0.8;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+
+
+.imgstyle:hover {
+    background-color: #f3f2f1;
+}
+
+center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.imagestyle {
+    font-size: 14px;
+    height: 22px;
+    opacity: 0.8;
+    vertical-align: bottom;
+}
+
+
+
+.imagestyle1 {
+    font-size: 14px;
+    height: 20px;
+    opacity: 0.8;
+    vertical-align: bottom;
+    color: #6264A7;
+    cursor: pointer;
+}
+.rectpage {
+    /*padding: 6PX;*/
+    height: 47px;
+    color: #6264A7;
+    border: 1px solid #6264A7;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 2px 4px -0.75px rgba(0,0,0,0.1);
+    font-family: "Segoe UI";
+    font-size: 14px;
+    margin-right: 0px;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-left: 2px;
+        transition: 0.3s;
+        font-size: 14px;
+        font-family: 'Segoe UI';
+    }
+
+
+
+
+
+        .tab button:hover {
+            border-bottom: 2px solid #6264A7;
+        }
+
+
+
+
+
+        .tab button.active {
+            border-bottom: 3px solid #6264A7;
+        }
+
+
+
+
+
+.tabcontent {
+    display: none;
+    border-top: none;
+}

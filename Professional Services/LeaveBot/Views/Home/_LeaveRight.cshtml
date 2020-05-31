@@ -1,0 +1,73 @@
+﻿@model Tuple<ProfessionalServices.LeaveBot.Models.Employee, List<ProfessionalServices.LeaveBot.Models.LeaveExtended>, List<ProfessionalServices.LeaveBot.Models.ManagerDetails>>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/main.css" />
+</head>
+<body>
+    <div class="col-sm-5 col-md-5 col-lg-3 gap">
+        <br />
+        <div>
+            <div class="centered">
+                <img src=@Model.Item1.PhotoPath hspace="20" style="box-shadow:0 0 10px 7px #D3D3D3" @*alt=@Model.Item1.Name *@>
+            </div>
+            <div class="vb">
+                <span class="displayname">@Model.Item1.DisplayName</span><br />
+                <span class="jobtitle">@(@Model.Item1.JobTitle ?? @Model.Item1.EmailId)</span><br />
+                <span><b>@Model.Item1.Totalleaves</b></span><span class="daysoof"> days OOF in </span><span><b>@DateTime.Now.ToString("MM")</b></span><span class="months"> months</span><br /><br />
+                <span><button class="rect" onclick="submit('adaptivecard');">Apply Leave</button></span>
+            </div> <br />
+        </div>
+        <div id="heading">
+            <h5>Notifications</h5>
+        </div>
+        <div class="card card-accent-success mb-3 card1">
+            <div class="card-body displayFlex">
+                <img src="@Model.Item1.PhotoPath" alt="img" class="approved_by" />
+                <div class='displayFlex flexColoumn pl-2'>
+                    <div class="manager"> @Model.Item1.ManagerName has approved your leave </div>
+                    <div id="msg1">Enjoy</div>
+                </div>
+            </div>
+            <div class="footer">
+                <!-- <i class="far fa-comment-alt"></i> -->
+                <img src='~/Resources/msg.PNG' alt='msg_img' class='footer_img'>
+                <span><a style="color:#6264A7" href="https://teams.microsoft.com/_#/conversations/8:orgid:@Model.Item1.AzureADId?ctx=chat" target="_blank">Chat with @Model.Item1.ManagerName</a></span>
+            </div>
+        </div>
+        <div class="card card-accent mb-3 card1">
+            <div class="card-body">
+                <img src="~/Resources/color.png " alt="img" class="approved_by" />
+                <span class="bot">Leave Bot </span>
+                <span id="msg">Tip</span>
+                <div class='content1'>
+                    <div class="box"></div>
+                    You can utilize the carried over leaves from last year for your recently applied leave....
+                </div>
+            </div>
+        </div>
+        <div class="card card-accent mb-3 card2">
+            <div class="card-body">
+                <img src="~/Resources/color.png" alt="img" class="approved_by" />
+                <span class="manager1">Leave Bot</span>
+                @foreach (var item in ProfessionalServices.LeaveBot.Models.PublicHolidaysList.HolidayList)
+                {
+                    if (item.Date > DateTime.Now)
+                    {
+                <div class='content'>
+                    <div class="box"></div>
+                    Upcoming holiday is @item.Title on @item.Date.Day.@item.Date.Month.@item.Date.Year
+                </div>
+                        break;
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

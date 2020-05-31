@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "1d2aaa6c-e3c1-40ca-906b-7c7f3b2d658b",
+  "packageName": "com.Airline.FleetInfoBot",
+  "developer": {
+    "name": "Airline Demo Team",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "FleetInfoBot",
+    "full": "FleetInfoBot for Microsoft Teams"
+  },
+  "description": {
+    "short": "This is a FleetInfo bot",
+    "full": "This sample allows demonstration of Fleet Information based on location. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "Outline-Fleet-Bot-09.png",
+    "color": "Airline-Fleet-Bot-02.png"
+  },
+  "accentColor": "#60A18E",
+  "bots": [
+    {
+      "botId": "1d2aaa6c-e3c1-40ca-906b-7c7f3b2d658b",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [],
+  "validDomains": []
+}

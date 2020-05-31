@@ -1,0 +1,306 @@
+﻿@{var space = 0;}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/b"></script>
+    <title></title>
+    <style>
+
+        .text {
+            height: 24px;
+            width: 179px;
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .date {
+            height: 16px;
+            width: 25px;
+            color: rgba(37,36,36,0.65);
+            font-family: "Segoe UI";
+            font-size: 12px;
+            line-height: 16px;
+            padding: 15px;
+        }
+
+        .day {
+            height: 16px;
+            width: 21px;
+            color: rgba(37,36,36,0.65);
+            font-family: "Segoe UI";
+            font-size: 12px;
+            line-height: 16px;
+            padding: 15px;
+        }
+
+        .event {
+            height: 16px;
+            width: 29px;
+            color: rgba(37,36,36,0.65);
+            font-family: "Segoe UI";
+            font-size: 12px;
+            line-height: 16px;
+            padding: 15px;
+        }
+
+        .row-date {
+            height: 32px;
+            /*width: 75px;*/
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+
+        .row-day {
+            height: 19px;
+            /*width: 51px;*/
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        .row-event {
+            height: 19px;
+            /*width: 91px;*/
+            color: #252424;
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        .row-event1 {
+            height: 16px;
+            width: 188px;
+            color: #B24782;
+            font-family: "Segoe UI";
+            font-size: 12px;
+            line-height: 16px;
+        }
+        /* {
+            font-size: 17px;
+            font-family: "Segoe UI"; /*'Times New Roman', Times, serif;
+        }
+        */
+
+        .container {
+            background-color: rgb(240,240,240);
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .panel-group {
+            width: 100%;
+            opacity: 1.5;
+            border: 10px solid transparent;
+            display: block;
+            margin: 10px auto;
+            border: 1px solid transparent;
+        }
+
+        .heading {
+            /*background-color: white;*/
+            /*padding: 10px 0px;*/
+            border-bottom: 1px black
+        }
+
+        .body {
+            /*background-color: #f5f5f5;*/
+            /*padding: 5px;*/
+            background-color: rgb(240,240,240);
+            width: 100%
+        }
+
+        .dot1 {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: forestgreen;
+            display: inline-block;
+        }
+
+        .one {
+            left: 0;
+        }
+
+        .two {
+            padding-left: 300px;
+        }
+
+        .three {
+            padding-left: 300px;
+        }
+
+        .colored {
+            border: 1px solid rgba(0,0,0,.15);
+            padding: 0px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="container">
+        <div>
+            <br />
+            <br />
+            @*style="color:black;font-size:20px;"*@
+            <p class="text">
+                &nbsp;&nbsp;&nbsp;@ProfessionalServices.LeaveBot.Models.PublicHolidaysList.Title
+                @*<span style="float:right;padding-right:60px;" class="glyphicon glyphicon-calendar"></span>
+                    <span style="float:right;padding-right:70px;" class="glyphicon glyphicon-list"></span>
+                    border-top:1px solid rgba(0,0,0,.15)
+                            border-top:1px solid rgba(0,0,0,.08);*@
+            </p>
+        </div>
+        <div class="panel-group">
+            <div class="body">
+                <table rules="none" border="0" cellpadding="20" cellspacing="20">
+                    <thead>
+                        <tr style="opacity:0.7">
+                            <th class="date">
+                                Date
+                            </th>
+                            <th class="day">
+                                Day
+                            </th>
+                            <th class="event">
+                                Event
+                            </th>
+                            <th class="event"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in ProfessionalServices.LeaveBot.Models.PublicHolidaysList.HolidayList)
+                        {
+                            if (space % 2 == 0)
+                            {
+                        <tr style="background-color:rgb(240, 240, 240);">
+                            <td style="padding : 6px;"></td>
+                            <td style="padding : 6px;"></td>
+                            <td style="padding : 6px;"></td>
+                            <td style="padding : 6px;"></td>
+                        </tr>
+                            }
+
+                            if (space % 2 != 0)
+                            {
+                        <tr style="background-color:white;border-top:1px solid rgba(0,0,0,0.12);">
+                            <td class="row-date">
+                                @item.Date.ToString("dd MMMM yyyy")
+                                @if (item.OptionalHoliday != null)
+                                        {
+                                <br />
+                                <span><i style="opacity:0.5;font-family:cursive;font-family : 'Segoe UI'">@item.OptionalHoliday</i></span>
+                                        }
+                            </td>
+                            <td class="row-day">
+                                @if (item.Date.DayOfWeek == DayOfWeek.Friday || item.Date.DayOfWeek == DayOfWeek.Monday)
+                                        {
+                                @item.Date.DayOfWeek<br />
+                                <span class="dot1"></span>
+                                <span style="color : forestgreen">Long Holiday</span>
+                                        }
+                                        else
+                                        {
+                                @item.Date.DayOfWeek
+                                        }
+                            </td>
+                            <td class="row-event">
+                                @if (item.Title == "Diwali" || item.Title == "Independence Day")
+                                        {
+                                @item.Title
+                                <br />
+                                <span class="row-event1">@item.CelebrationText</span>
+                                        }
+                                        else
+                                        {
+                                @item.Title
+                                        }
+                            </td>
+                            @if (item.Title == "Diwali" || item.Title == "Independence Day")
+                                    {
+                            @*<td class="row-event">
+                                    <img src="~/Resources/Diwali.PNG" />
+                                </td>*@
+                            <td class="row-event"><img src=@item.ImagePath /></td>
+                                    }
+                                    else
+                                    {
+                            <td class="row-event"></td>
+                                    }
+                        </tr>
+                            }
+                            else
+                            {
+                        <tr style="background-color:white;border-top:1px solid rgb(0,0,0,0.08);">
+                            <td class="row-date">
+                                @item.Date.ToString("dd MMMM yyyy")
+                                @if (item.OptionalHoliday != null)
+                                        {
+                                <br />
+                                <span><i style="opacity:0.5;font-family:cursive;font-family : 'Segoe UI'">@item.OptionalHoliday</i></span>
+                                        }
+                            </td>
+                            <td class="row-day">
+                                @if (item.Date.DayOfWeek == DayOfWeek.Friday || item.Date.DayOfWeek == DayOfWeek.Monday)
+                                        {
+                                @item.Date.DayOfWeek<br />
+                                <span class="dot1"></span>
+                                <span style="color : forestgreen">Long Holiday</span>
+                                        }
+                                        else
+                                        {
+                                @item.Date.DayOfWeek
+                                        }
+                            </td>
+                            <td class="row-event">
+                                @if (item.Title == "Diwali" || item.Title == "Independence Day")
+                                        {
+                                @item.Title
+                                <br />
+                                <span style="color:deeppink">@item.CelebrationText</span>
+                                        }
+                                        else
+                                        {
+                                @item.Title
+                                        }
+                            </td>
+                            @if (item.Title == "Diwali" || item.Title == "Independence Day")
+                                    {
+                            @*<td class="row-event"><img src="~/Resources/Diwali.PNG" /></td>*@
+                            <td class="row-event"><img src=@item.ImagePath /></td>
+
+                                    }
+                                    else
+                                    {
+                            <td class="row-event"></td>
+                                    }
+                        </tr>
+                            }
+                            space++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+﻿@model Airlines.XAirlines.ViewModels.PortalViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="icon" type="image/gif/png" href="cal.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="~/Content/portal.css">
+</head>
+
+<body>
+    <div class="container no-pad">
+
+        @foreach (var monthlySchedule in Model.Monthly)
+        {
+            <div class="month">
+                <span class="month-size">@(monthlySchedule.MonthName)</span>
+            </div>
+            <table class="responsive-calendar">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var weeklySchedule in monthlySchedule.Weekly)
+                    {
+                    <tr>
+
+                        @for (int i = 0; i < weeklySchedule.DayOfWeek; i++)
+                        {
+                            <td>&nbsp;</td>
+                        }
+
+                        @foreach (var dailyDuty in weeklySchedule.Daily)
+                        {
+                            if (dailyDuty.vacationPlan == true||dailyDuty.isDayOff == true)
+                            {
+                                <td class="date" >@dailyDuty.Date.Day</td>
+                            }
+                            else
+                            {
+                                <td class="date" onclick="submit('@dailyDuty.Date','@Model.UserEmailId');">@dailyDuty.Date.Day</td>
+                            }
+                        }
+
+                        @for (int i = (weeklySchedule.DayOfWeek + weeklySchedule.Daily.Count); i <= 7; i++)
+                        {
+                            <td><div>&nbsp;</div></td>
+                        }
+                    </tr>
+
+                    <tr class="desktop">
+
+                        @for (int i = 0; i < weeklySchedule.DayOfWeek; i++)
+                        {
+                            <td><div>&nbsp;</div></td>
+                        }
+
+                        @foreach (var dailyDuty in weeklySchedule.Daily)
+                        {
+                            if (dailyDuty.Details != null)
+                            {
+                                if (dailyDuty.vacationPlan == true||dailyDuty.isDayOff==true)
+                                {
+                                    <td >
+                                        <div class="@(dailyDuty.Details.Colour)">@dailyDuty.Details.DisplayText</div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td onclick="submit('@dailyDuty.Date', '@Model.UserEmailId');">
+                                        <div class="@(dailyDuty.Details.Colour)">@dailyDuty.Details.DisplayText</div>
+                                    </td>
+                                }
+
+                            }
+                            else
+                            {
+                                <td><div>&nbsp;</div></td>
+                            }
+
+                        }
+
+                        @for (int i = (weeklySchedule.DayOfWeek + weeklySchedule.Daily.Count); i <= 7; i++)
+                        {
+                            <td><div>&nbsp;</div></td>
+                        }
+                    </tr>
+
+                        <tr class="@(monthlySchedule.Weekly.IndexOf(weeklySchedule) == monthlySchedule.Weekly.Count-1? "": "size-pad" )">
+
+                            @for (int i = 0; i < weeklySchedule.DayOfWeek; i++)
+                            {
+                                <td><div>&nbsp;</div></td>
+                            }
+
+                            @foreach (var dailyDuty in weeklySchedule.Daily)
+                            {
+                                if (dailyDuty.Details != null && !string.IsNullOrEmpty(dailyDuty.Details.Event2))
+                                {
+                                    <td>
+                                        <div class="@(dailyDuty.Details.Colour) day-event">
+                                            @dailyDuty.Details.Event2
+                                        </div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td><div>&nbsp;</div></td>
+                                }
+
+                            }
+
+
+                            @for (int i = (weeklySchedule.DayOfWeek + weeklySchedule.Daily.Count); i <= 7; i++)
+                            {
+                                <td><div></div></td>
+                            }
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+
+
+    </div>
+
+    <script src="@(" https://unpkg.com/@microsoft/teams-js@1.3.4/dist/MicrosoftTeams.min.js")"></script>
+
+
+    <script>
+        microsoftTeams.initialize();
+        function submit(code,EmailId) {
+            let taskInfo = {
+                title: null,
+                height: null,
+                width: null,
+                url: null,
+                card: null,
+                fallbackUrl: null,
+                completionBotId: null,
+            };
+            // Set task moduel basic details.
+            taskInfo.title = "Show Duty";
+            taskInfo.height = "medium";
+            taskInfo.width = "medium";
+            taskInfo.height = "650";
+            taskInfo.width = "500";
+            taskInfo.url = '@(Airlines.XAirlines.Helpers.ApplicationSettings.BaseUrl)' + '/duty?code=' + code + '&userEmailId=' + EmailId;
+            microsoftTeams.tasks.startTask(taskInfo);
+        }
+    </script>
+</body>
+
+</html>

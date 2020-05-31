@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "iat": {
+            "type": "integer"
+        },
+        "ver": {
+            "type": "string"
+        },
+        "appid": {
+            "type": "string"
+        },
+        "sub": {
+            "type": "string"
+        },
+        "appidacr": {
+            "type": "string"
+        },
+        "acr": {
+            "type": "string"
+        },
+        "tid": {
+            "type": "string"
+        },
+        "iss": {
+            "type": "string"
+        },
+        "aud": {
+            "type": "string"
+        },
+        "exp": {
+            "type": "integer"
+        },
+        "nbf": {
+            "type": "integer"
+        }
+    }
+}

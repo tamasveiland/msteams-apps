@@ -1,0 +1,837 @@
+﻿/* button */
+@font-face {
+    font-family: 'Teams Assets';
+    src: url('/fonts/TeamsAssets-Light.woff2') format('woff2'), url('/fonts/TeamsAssets-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.shape-format-exclamtion::before {
+    top: 4px;
+    position: relative;
+    font-family: "Teams Assets";
+    content: "\E62B";
+}
+
+.shape-format::before {
+    position: relative;
+    top: 7px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E20B";
+}
+
+.shape-format-allemployees::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E202";
+    cursor: pointer;
+}
+
+.line1::before {
+    position: absolute;
+    float: initial;
+    font-family: "Teams Assets";
+    content: "\E325";
+    font-size: 19px;
+}
+
+.shape-format-count1::before {
+    position: relative;
+    top: 3px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E428";
+}
+
+.shape-format-count2::before {
+    position: relative;
+    top: 3px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E329";
+    cursor: pointer;
+}
+
+.shape-format-count4::before {
+    position: relative;
+    top: 3px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E329";
+}
+
+.shape-format-count3::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E912";
+    cursor: pointer;
+}
+
+.shape-format-count5::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E912";
+}
+
+.shape-format-schedule::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E115";
+}
+
+.shape-format-draft::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E346";
+}
+
+.shape-format-tick::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E412";
+}
+
+.shape-format-pencil::before {
+    position: relative;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Teams Assets";
+    content: "\E40D";
+}
+
+.shape-format-dots::before {
+    position: relative;
+    left: 5px;
+    font-family: "Teams Assets";
+    content: "\E94F";
+}
+
+[type="button"] {
+    -webkit-appearance: none !important;
+}
+
+.shape-format-first::before {
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+    font-size: 18px;
+    font-family: "Teams Assets";
+    content: "\E442";
+}
+
+.shape-format-second::before {
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+    font-size: 18px;
+    font-family: "Teams Assets";
+    content: "\E328";
+}
+
+.shape-format-third::before {
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+    font-size: 18px;
+    font-family: "Teams Assets";
+    content: "\E115";
+}
+
+.shape-format-four::before {
+    position: relative;
+    top: 2px;
+    padding-right: 5px;
+    font-size: 18px;
+    font-family: "Teams Assets";
+    content: "\E131";
+}
+
+.line-grp2::before {
+    position: absolute;
+    font-family: "Teams Assets";
+    font-size: 14px;
+    content: "\E20B";
+    left: 54%;
+}
+
+html,
+body {
+    height: 100%
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI";
+}
+
+button.favorite.styledtest {
+    background-color: #6264a7;
+    color: #fff;
+    border: 1px solid rgba(37, 36, 36, 0.15);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px -0.75px rgba(0, 0, 0, 0.1);
+    padding: 4px 10px 4px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "Segoe UI";
+    float: left;
+    position: absolute;
+    top: 52%;
+}
+
+button.favorite.styled {
+    background-color: #6264a7;
+    color: #fff;
+    border: 1px solid rgba(37, 36, 36, 0.15);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px -0.75px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px 7px 20px;
+    font-size: 14px;
+    margin-top: 14px;
+    cursor: pointer;
+    font-family: "Segoe UI";
+    float: left;
+    position: relative;
+    left: 88%;
+}
+
+.message {
+    font-size: 14px;
+    text-align: justify;
+}
+
+tr.bor {
+    /*cursor: pointer;*/
+    font-family: "Segoe UI";
+}
+
+table.table.table-hover {
+    font-family: "Segoe UI";
+}
+
+.shape-format {
+    height: 25px;
+    width: 35px;
+    position: relative;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.shape-format1 {
+    height: 20px;
+    width: 30px;
+    position: relative;
+    bottom: 3px;
+}
+
+table.table {
+    border-top: 2px solid white;
+    position: relative;
+    /* top: 50px; */
+    margin-bottom: 0px;
+}
+
+.font-color {
+    color: darkgray;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    width: 20%;
+}
+
+.info {
+    position: relative;
+    left: 20px;
+    cursor: pointer;
+}
+
+.both,
+.table td {
+    vertical-align: middle !important;
+}
+
+.col-width {
+    width: 30%;
+}
+
+.sent {
+    position: relative;
+    left: 10px;
+}
+
+.align {
+    font-kerning: auto;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.dropdown-menu.show {
+    transform: translate3d(-155px, 30px, 0px) !important;
+}
+
+tbody {
+    font-size: 14px;
+    font-family: 'Segoe UI' !important;
+}
+
+/* row hide */
+
+.card-header div[aria-expanded="true"] .title-down-row {
+    display: none;
+}
+
+.card-header .collapsed .title-down-row {
+    display: block;
+}
+
+/* row hide-end */
+
+
+/* Desktop-hide */
+.mobile-title,
+.draft,
+button.favorite.styled2 {
+    display: none;
+}
+
+/* media queries for mobile */
+@media only screen and (max-width: 425px) {
+
+    button.favorite.styled,
+    .font-color,
+    .bor {
+        display: none;
+    }
+
+    .mobile-title {
+        display: contents;
+    }
+
+    .table thead th {
+        vertical-align: middle;
+        border-bottom: none !important;
+    }
+
+    .table td {
+        border-top: none !important;
+        border-bottom: 3px solid #dee2e6;
+        width: 100vw;
+    }
+
+    span#date {
+        position: relative;
+        /*right: 18px;*/
+        font-size: 12px;
+    }
+
+    span#mail-msg {
+        position: relative;
+        /*right: 10px;*/
+        font-size: 12px;
+    }
+
+    img.line {
+        position: relative;
+        right: 9px;
+        height: 25px;
+        width: 30px;
+    }
+
+    .line-grp {
+        position: relative;
+        right: 32px;
+        height: 18px;
+        width: 26px;
+    }
+
+    span#mb-count1 {
+        position: relative;
+        top: 2px;
+        font-size: 12px;
+        right: 32px;
+    }
+
+    span#mb-count2 {
+        position: relative;
+        top: 2px;
+        font-size: 12px;
+        right: 32px;
+    }
+
+    .draft-grp::before {
+        position: relative;
+        font-family: "Teams Assets";
+        content: "\E346";
+        font-size: 14px;
+    }
+
+    .sent-grp::before {
+        position: relative;
+        font-family: "Teams Assets";
+        content: "\E412";
+        font-size: 14px;
+    }
+
+    .schedule-grp::before {
+        position: relative;
+        font-family: "Teams Assets";
+        content: "\E115";
+        font-size: 14px;
+    }
+
+    button.favorite.styled2 {
+        background-color: #6264a7;
+        color: #fff;
+        border: 1px solid rgba(37, 36, 36, 0.15);
+        box-shadow: 0 2px 4px -0.75px rgba(0, 0, 0, 0.1);
+        padding: 5px 20px 7px 20px;
+        font-size: 14px;
+        margin-top: 14px;
+        cursor: pointer;
+        font-family: "Segoe UI";
+        position: fixed;
+        bottom: 0;
+        display: inherit;
+        width: 100%;
+    }
+
+    img.line1 {
+        position: absolute;
+        float: initial;
+        height: 16px;
+        width: 16px;
+        /* bottom: 10px; */
+        /* left: 8rem; */
+    }
+
+    .dots {
+        position: relative;
+        float: right;
+        right: 18px;
+    }
+
+    .shape-format2 {
+        height: 15px;
+        width: 25px;
+        position: relative;
+        top: 3px;
+        bottom: 3px;
+        float: left;
+        margin-left: -26px;
+        padding-left: 1%;
+    }
+
+    .col-12.three-states {
+        position: relative;
+        right: 14px;
+    }
+
+    .draft-grp-three-states::before {
+        position: relative;
+        left: 2px;
+        top: 4px;
+        font-family: "Teams Assets";
+        content: "\E346";
+        font-size: 14px;
+    }
+
+    .sent-grp-three-states::before {
+        position: relative;
+        left: 2px;
+        top: 4px;
+        font-family: "Teams Assets";
+        content: "\E412";
+        font-size: 14px;
+    }
+
+    .schedule-grp-three-states::before {
+        position: relative;
+        left: 2px;
+        top: 4px;
+        font-family: "Teams Assets";
+        content: "\E115";
+        font-size: 14px;
+    }
+    /*.draft-grp-three-states {
+        position: relative;
+        height: 18px;
+        width: 22px;
+    }*/
+
+    /*.line-grp-three-states {
+        position: relative;
+        height: 18px;
+        width: 26px;
+        bottom: 2px;
+    }*/
+    .line-grp-three-states::before {
+        position: relative;
+        top: 2px;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E202";
+    }
+
+    .line-grp-three-states1::before {
+        position: relative;
+        top: 2px;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E20B";
+    }
+
+    .line-grp-three-states2::before {
+        position: relative;
+        top: 2px;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E329";
+    }
+
+    .line-grp-three-states3::before {
+        position: relative;
+        top: 2px;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E912";
+    }
+
+    .line1-three-states {
+        position: relative;
+        float: right;
+        height: 25px;
+        width: 25px;
+        bottom: 56px;
+        left: 14px;
+    }
+
+    span#date-three-states {
+        position: relative;
+        font-size: 12px;
+    }
+
+    span#mail-msg-three-states {
+        position: relative;
+        font-size: 12px;
+    }
+
+    span#mb-count1-three-states,
+    span#mb-count2-three-states,
+    span#mb-ack-three-states,
+    span#mb-likes-three-states {
+        position: relative;
+        font-size: 12px;
+    }
+
+    span.three-states-msg {
+        font-size: smaller;
+    }
+
+    .count-msg {
+        position: relative;
+        left: 70px;
+    }
+
+    .title-down-row {
+        position: relative;
+        left: 16px;
+    }
+
+    .line1-three-states {
+        position: relative;
+        float: right;
+        height: 25px;
+        width: 25px;
+        bottom: 52px;
+    }
+
+    .container-fluid.mobile {
+        position: relative;
+        overflow: auto;
+    }
+
+    .hide-mb {
+        display: none;
+    }
+
+
+    /* td:hover{
+        z-index: 1;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(1.05);
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1.05);   
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1.5);
+        transition: all 200ms ease-in;
+        transform: scale(1.05);
+    } */
+    img.dropbtn.line1 {
+        left: 84px;
+    }
+
+    img.dropbtn.line1-three-states {
+        left: 198px;
+    }
+
+    /* new css for dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        padding: 2px 3px;
+        right: 20px;
+    }
+
+    .dropdown-item:active {
+        color: black !important;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .color-chg {
+        background-color: #fff !important;
+        /* border-bottom: 2px solid rgba(0, 0, 0, .125) !important; */
+        font-size: 14px !important;
+        font-family: 'Segoe UI' !important;
+        border-top: 2px solid rgba(0, 0, 0, .125);
+        padding: 0.5rem 1.25rem !important;
+    }
+
+    .card-header {
+        border-bottom: none !important;
+    }
+
+    /*div#row1 {
+        border-top: none;
+        border-bottom: 1px solid rgba(0, 0, 0, .125) !important;
+    }*/
+
+    span.three-states-titles {
+        font-size: 14px !important;
+        font-family: 'Segoe UI' !important;
+    }
+
+    .mobile-border {
+        overflow: auto;
+    }
+
+    .three-states {
+        position: relative;
+        bottom: 24px;
+    }
+
+    .card-body.length {
+        padding-bottom: 0rem !important;
+        border-bottom: 0.5px solid rgba(0, 0, 0, .125) !important;
+    }
+
+    /* new css for dropbtn end */
+    .line-grp1::before {
+        position: absolute;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E202";
+        left: 39%;
+    }
+
+    .line-grp2::before {
+        position: absolute;
+        font-family: "Teams Assets";
+        font-size: 14px;
+        content: "\E20B";
+        left: 54%;
+    }
+    /*.line-grp1,
+    .line-grp2 {
+        height: 18px;
+        width: 26px;
+    }
+
+    img.line-grp1 {
+        position: absolute;
+        left: 38%;
+    }*/
+
+    span.fix {
+        top: 2px;
+        position: absolute;
+        left: 45%;
+        font-size: 12px;
+    }
+
+    img.line-grp2 {
+        position: absolute;
+        left: 52%;
+    }
+
+    span.fix1 {
+        top: 2px;
+        position: absolute;
+        left: 60%;
+        font-size: 12px;
+    }
+
+    /* .dropdown-menu.show {
+        transform: translate3d(-12px, 20px, 0px) !important;
+    } */
+
+    .card-header div[aria-expanded="true"] .title-down-row {
+        display: none;
+    }
+
+    .card-header .collapsed .title-down-row {
+        display: block;
+    }
+
+    dropdown-menu.show {
+        transform: translate3d(-155px, 30px, 0px) !important;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    span.three-states-msg {
+        font-size: 10px;
+    }
+
+    span.title,
+    .three-states-titles {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Segoe UI'
+    }
+
+    .count-msg {
+        position: relative;
+        left: 71px;
+    }
+
+    img.dropbtn.line1 {
+        left: 35px;
+    }
+
+    img.dropbtn.line1-three-states {
+        left: 138px;
+    }
+
+    /* img.line1 {
+        left: 5rem;
+    } */
+    .dots {
+        right: 18px;
+    }
+
+    .dropdown-menu.show {
+        transform: translate3d(-155px, 30px, 0px) !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    img.line-grp1 {
+        left: 43%;
+    }
+
+    span.fix {
+        left: 52%;
+    }
+
+    img.line-grp2 {
+        left: 59%;
+    }
+
+    span.fix1 {
+        left: 68%;
+    }
+    /* img.line1 {
+        left: 2rem;
+    } */
+    .dropdown-menu.show {
+        transform: translate3d(-155px, 30px, 0px) !important;
+    }
+
+    .dots {
+        right: 10px;
+    }
+
+    .dropdown-menu.show {
+        transform: translate3d(-146px, 20px, 0px) !important;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    button.favorite.styled {
+        top: 58%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    button.favorite.styled {
+        left: 85%;
+    }
+
+    /* .dropdown-menu.show {
+        transform: translate3d(-124px, 20px, 0px) !important;
+    } */
+}
+
+@media only screen and (max-width: 1280px) {
+    table.table {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+
+    span#count1 {
+        position: absolute;
+    }
+
+    .dropdown-item {
+        padding: 2px 9px !important;
+    }
+}
+
+@media screen and (max-width:475px) {
+    button.favorite.styledtest {
+        top: 57%;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    button.favorite.styledtest {
+        top: 58%;
+    }
+}

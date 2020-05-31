@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "Connection": {
+            "type": "string"
+        },
+        "Expect": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Action-Authorization": {
+            "type": "string"
+        },
+        "Card-Correlation-Id": {
+            "type": "string"
+        },
+        "Action-Request-Id": {
+            "type": "string"
+        },
+        "Content-Length": {
+            "type": "string"
+        },
+        "Content-Type": {
+            "type": "string"
+        }
+    }
+}

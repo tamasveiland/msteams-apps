@@ -1,0 +1,90 @@
+﻿@model CrossVertical.Announcement.Models.AnnouncementDetails
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/b"></script>
+    <link rel="stylesheet" href="~/Content/details.css" />
+</head>
+<body>
+    <div id="container">
+        @*upper div*@
+        <br />
+        <br />
+        <header>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="padding-left:15px;">
+                        <div class="heading">
+                            <div class="panel-heading text-center">
+                                <span style="font-size:22px;padding-top:40px;">64%</span> <br style="line-height:25px;" />OpenRate
+                            </div>
+                        </div>
+                        <div class="body">
+                            <table rules="none">
+                                <tr>
+                                    <td style="padding-right: 150px;padding-bottom:10px;">Contoso All Employees</td>
+                                    <td style="padding-right:5px;padding-bottom:10px;">56%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 150px;padding-bottom:10px;">Contoso LT</td>
+                                    <td style="padding-right:5px;padding-bottom:10px;">88%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div style="padding-left:15px;">
+                        <div class="heading">
+                            <div class="panel-heading text-center">
+                                <span style="font-size:22px;">21</span><br style="line-height:25px;" />Replies
+                            </div>
+                        </div>
+                        <div class="body">
+                            <table rules="none">
+                                <tr>
+                                    <td class="cent"><img class="dot" src="~/Resources/download.jpg" /></td>
+                                    <td style="padding-left:20px;"><p style="font-weight:bold">Will Little</p><br style="line-height:12px;" />Awesome News! Can we all work there?</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div style="padding-left:15px;">
+                        <div class="heading">
+                            <div class="panel-heading text-center">
+                                <span style="font-size:22px;">125</span><br style="line-height:25px;" />Reactions
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="panel-body text-center">
+                                👍 40
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        @*Lower div*@
+        <main>
+            <div style="overflow:scroll">
+                <div class="split-left">
+                    <span class="text">Published announcement</span>
+                    @Html.Raw(Model.html)
+                </div>
+                <div class="split-right">
+                    <span class="text">  Replies</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

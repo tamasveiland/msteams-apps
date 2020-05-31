@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.3/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.3",
+  "version": "1.0.0",
+  "id": "f3399306-ba5e-4182-913e-734542c7b80c",
+  "packageName": "com.industry.common.notification",
+  "developer": {
+    "name": "Industry Demo Team",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "NotificationBot",
+    "full": "NotificationBot for demo notifications"
+  },
+  "description": {
+    "short": "This is a notification bot",
+    "full": "This sample notification allows demonstration of notifications based on industries. You can extend this to add more content and capabilities."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#60A18E",
+  "bots": [
+    {
+      "botId": "f3399306-ba5e-4182-913e-734542c7b80c",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [],
+  "validDomains": []
+}
