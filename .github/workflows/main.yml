@@ -32,10 +32,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
      
     - name: Restore NuGet Packages
-      run: nuget restore SimpleFrameworkApp.sln
+      run: nuget restore "Professional Services\Professional Services.sln"
  
     - name: Build and Publish Web App
-      run: msbuild SimpleFrameworkApp.sln /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation=".\Publish\WebApp.zip"
+      run: msbuild "Professional Services\Professional Services.sln" /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation=".\Publish\WebApp.zip"
  
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
