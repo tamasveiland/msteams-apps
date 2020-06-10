@@ -49,7 +49,7 @@ jobs:
         # The file path to remove
         path: "Professional Services\\LeaveBot\\Manifest\\Leave App Manifest.zip"
     - name: Compress Teams App
-      run: Compress-Archive "Professional Services\\LeaveBot\\Manifest\\" ./TeamsApp.zip
+      run: Compress-Archive "Professional Services\\LeaveBot\\Manifest\\*.*" ./TeamsApp.zip
     - name: Upload Artifact - Teams App
       uses: actions/upload-artifact@v1.0.0
       with:
