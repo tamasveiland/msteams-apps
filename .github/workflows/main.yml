@@ -43,16 +43,15 @@ jobs:
         name: published_webapp
         path: Professional Services/LeaveBot/Publish
     # Copy manifest folder
-    - run: xcopy "Professional Services\LeaveBot\Manifest\" "temp"
     - name: Remove File
       uses: JesseTG/rm@v1.0.0
       with:
         # The file path to remove
-        path: "temp\Leave App Manifest.zip"
+        path: "Professional Services\\LeaveBot\\Manifest\\Leave App Manifest.zip"
     - name: Compress Teams App
       uses: TonyBogdanov/zip@1.0
       with:
-        args: zip -qq -r ./TeamsApp.zip ./temp
+        args: zip -qq -r ./TeamsApp.zip "Professional Services\\LeaveBot\\Manifest\\"
     - name: Upload Artifact - Teams App
       uses: actions/upload-artifact@v1.0.0
       with:
