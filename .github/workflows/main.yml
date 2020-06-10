@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI/CD for LeaveBot Microsoft Teams app
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -55,3 +55,35 @@ jobs:
       with:
         name: teams_app
         path: ./TeamsApp.zip
+
+
+  deploy_teams_app:   
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    needs: [build]
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          # Artifact name
+          name: "teams_app" # optional
+          # Destination path
+          path: ./package # optional
+      - name: Office 365 CLI Login
+        uses: pnp/action-cli-login@v1.0.0
+        with:
+          # Username (email address) of the admin
+          ADMIN_USERNAME: ${{ secrets.adminUsername }}
+          # Password of the admin
+          ADMIN_PASSWORD: ${{ secrets.adminPassword }}
+      - name: Office 365 CLI Run Script
+        uses: pnp/action-cli-runscript@v1.0.0
+        with:
+          # Relative path of the script in your repo.
+          O365_CLI_SCRIPT_PATH: './scripts/upload_manifest.sh' # optional
+          # Office 365 CLI Script
+          # O365_CLI_SCRIPT: # optional
+          # Used only with O365_CLI_SCRIPT. If true the assumption is the script passed in O365_CLI_SCRIPT will be a PowerShell script, otherwise the assumption is bash script. Default is false
+          IS_POWERSHELL: false # optional
