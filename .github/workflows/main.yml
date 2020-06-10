@@ -37,8 +37,24 @@ jobs:
     - name: Build and Publish Web App
       run: msbuild "Professional Services\Professional Services.sln" /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation=".\Publish\WebApp.zip"
  
-    - name: Upload Artifact
+    - name: Upload Artifact - Web App
       uses: actions/upload-artifact@v1.0.0
       with:
         name: published_webapp
+        path: Professional Services/LeaveBot/Publish
+    # Copy manifest folder
+    - run: xopy "Professional Services\LeaveBot\Manifest\" "temp"
+    - name: Remove File
+      uses: JesseTG/rm@v1.0.0
+      with:
+        # The file path to remove
+        path: "temp\Leave App Manifest.zip"
+    - name: Compress Teams App
+      uses: TonyBogdanov/zip@1.0
+      with:
+        args: zip -qq -r ./TeamsApp.zip ./temp
+    - name: Upload Artifact - Teams App
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: teams_app
         path: Professional Services/LeaveBot/Publish
