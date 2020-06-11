@@ -111,4 +111,4 @@ jobs:
           # Enter an existing Slot other than the Production slot
           #slot-name: # optional, default is production
           # Applies to Web App only: Path to package or folder. *.zip, *.war, *.jar or a folder to deploy
-          package: ./package # optional, default is .
+          package: ./package/WebApp.zip # optional, default is .
