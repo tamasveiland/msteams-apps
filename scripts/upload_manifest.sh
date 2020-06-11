@@ -4,7 +4,7 @@ app=$(o365 teams app list -o json | jq '.[] | select(.externalId == "'"$APPLICAT
 
 if [ -z "$app" ]; then
   # install app
-  o365 teams app publish -p "./package/second-demo-app.zip"
+  o365 teams app publish -p "./package/TeamsApp.zip"
 else
   # update app
   appId=$(echo $app | jq '.id')
