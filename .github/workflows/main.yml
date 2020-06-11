@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: published_webapp
-        path: Professional Services/LeaveBot/Publish
+        path: Professional Services\LeaveBot\bin\app.publish
     # Copy manifest folder
     - name: Remove File
       uses: JesseTG/rm@v1.0.0
@@ -111,4 +111,5 @@ jobs:
           # Enter an existing Slot other than the Production slot
           #slot-name: # optional, default is production
           # Applies to Web App only: Path to package or folder. *.zip, *.war, *.jar or a folder to deploy
-          package: ./package/WebApp.zip # optional, default is .
+          package: ./package # optional, default is .
+      
