@@ -25,7 +25,7 @@
   "accentColor": "#60A18E",
   "configurableTabs": [
     {
-      "configurationUrl": "https://leavebotdemo.azurewebsites.net/configure",
+      "configurationUrl": "https://bootcampdemolob.azurewebsites.net/configure",
       "canUpdateConfiguration": true,
       "scopes": [ "team", "groupchat" ]
     }
@@ -34,8 +34,8 @@
     {
       "entityId": "com.contoso.LeaveBot.leaveboard",
       "name": "Leave Board",
-      "contentUrl": "https://leavebotdemo.azurewebsites.net/?EmailId={upn}",
-      "websiteUrl": "https://leavebotdemo.azurewebsites.net",
+      "contentUrl": "https://bootcampdemolob.azurewebsites.net/?EmailId={upn}",
+      "websiteUrl": "https://bootcampdemolob.azurewebsites.net",
       "scopes": [
         "personal"
       ]
@@ -43,8 +43,8 @@
     {
       "entityId": "com.contoso.LeaveBot.holidays",
       "name": "Public Holidays",
-      "contentUrl": "https://leavebotdemo.azurewebsites.net/First",
-      "websiteUrl": "https://leavebotdemo.azurewebsites.net/First",
+      "contentUrl": "https://bootcampdemolob.azurewebsites.net/First",
+      "websiteUrl": "https://bootcampdemolob.azurewebsites.net/First",
       "scopes": [
         "personal"
       ]
@@ -52,8 +52,8 @@
     {
       "entityId": "com.contoso.LeaveBot.help",
       "name": "Help",
-      "contentUrl": "https://leavebotdemo.azurewebsites.net/Second",
-      "websiteUrl": "https://leavebotdemo.azurewebsites.net/Second",
+      "contentUrl": "https://bootcampdemolob.azurewebsites.net/Second",
+      "websiteUrl": "https://bootcampdemolob.azurewebsites.net/Second",
       "scopes": [
         "personal"
       ]
